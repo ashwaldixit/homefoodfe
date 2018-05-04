@@ -10,6 +10,7 @@ import {CatererService} from '../../services/caterer.service'
 @Component({
   selector: 'product',
   templateUrl: './product.component.html',
+  styleUrls : ['./product.component.css'],
   providers:[ProductService,CategoryService,CatererService]
 })
 export class ProductComponent implements OnInit{
@@ -29,7 +30,7 @@ export class ProductComponent implements OnInit{
 
    getProducts() {
        console.log("came here")
-    this.productService.getProducts("North Indian").subscribe(res => this.products=res);
+    this.productService.getProducts("South Indian").subscribe(res => this.products=res);
       
   }
   getCategories(){
