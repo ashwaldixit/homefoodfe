@@ -39,10 +39,10 @@
   background-color:#FFF
 }
 .custom-products {
-  background-color:#fff;
-  border : 1px solid  #F7F7F7;
+  /* background-color:#fff; */
+  /* border : 1px solid  #F7F7F7; */
   margin-top : 10px;
-  box-shadow: 0 0 5px 0 rgba(50,50,50,.1);
+  /* box-shadow: 0 0 5px 0 rgba(50,50,50,.1); */
 }
 .product-overlay {
   position: absolute;
@@ -93,7 +93,7 @@
 }
 
 .category-products {
-  border: 1px solid #F7F7F0;
+  /* border: 1px solid #F7F7F0; */
   margin-bottom: 35px;
   padding-bottom: 20px;
 }
@@ -292,7 +292,7 @@ body {
 }
 
 .custom-ecaterer {
-  background-color: #b33939;
+  background: linear-gradient(grey, white);
   height: 245px;
   overflow: hidden;
   padding-top: 20px;
