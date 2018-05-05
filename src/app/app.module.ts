@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {ProductComponent} from './component/product/product.component';
 import { HttpModule , Headers } from '@angular/http';
+import {CustomerHeader} from './component/header/customerheader.component'
 
 import { AppComponent } from './app.component';
 import { CoolStorageModule } from 'angular2-cool-storage';
@@ -21,7 +22,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    ProductComponent
+    ProductComponent,
+    CustomerHeader
   ],
   imports: [
     BrowserModule,
