@@ -23,6 +23,7 @@
 }
 .custom-navbar {
   box-shadow: 0 0 10px 0 rgba(50,50,50,.1);
+  background-color: #FFF;
 }
 /*  */
 .custom-checkbox {
@@ -285,7 +286,15 @@ h2.title {
 
 body {
   font-family: 'Roboto', sans-serif;
-  background:;
   position: relative;
   font-weight:400px;
+}
+
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
 }

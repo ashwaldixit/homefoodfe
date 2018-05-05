@@ -1,4 +1,23 @@
 <customerheader></customerheader>
+<section class="custom-ecaterer">
+    <div class="container">
+        <div class="col-sm-12" *ngFor="let caterer of caterers">
+            <div class="col-sm-3">
+                <div class="custom-caterer-image">
+                    <img src="{{caterer.imageUrl}}"
+                        alt="" height="165" width="254">
+                </div>
+            </div>
+            <div class="col-sm-">
+                <div class="caterer-info">
+                    <h5 class="caterer-name">{{caterer.name}}</h5>
+                    <p class="caterer-details">{{caterer.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
 <section class="custom-section">
     <div class="container container-background">
         <div class="row">
@@ -20,7 +39,7 @@
                         </div>
                     </div>
 
-                    <h2>Caterers</h2>
+                    <!-- <h2>Caterers</h2>
                     <div class="panel-group category-products" id="accordian">
                         <div class="panel panel-default" *ngFor="let caterer of caterers">
                             <div class="panel-heading">
@@ -34,7 +53,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="col-sm-9 padding-right custom-products">

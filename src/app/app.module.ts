@@ -1,3 +1,4 @@
+import { RegisterComponent } from './component/register/register.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {ProductComponent} from './component/customer/product/product.component';
@@ -16,14 +17,16 @@ import {ErrorService} from './services/error.service';
 const routes: Routes = [
   
   // Home
-  { path: 'product', component: ProductComponent }]
+  { path: 'product', component: ProductComponent },
+  { path: 'regis', component: RegisterComponent }]
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
-    CustomerHeader
+    CustomerHeader,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

@@ -29,14 +29,14 @@
   display: inline-block
 }
 .container-background {
-  background: #F8F9FA;
+  background: #FFF;
 }
 .custom-filter {
     border: 2% solid grey;
     border-radius: 2%;
 }
 .custom-section {
-  background-color:#F7F7F7 
+  background-color:#FFF
 }
 .custom-products {
   background-color:#fff;
@@ -285,7 +285,53 @@ h2.title {
 
 body {
   font-family: 'Roboto', sans-serif;
-  background:;
   position: relative;
   font-weight:400px;
+  padding-top: 4.5rem;
+  background-color: #FFF !important
+}
+
+.custom-ecaterer {
+  background-color: #b33939;
+  height: 245px;
+  overflow: hidden;
+  padding-top: 20px;
+}
+
+.custom-caterer-image-wrapper {
+  background-color:gray;    
+  text-align:center;
+  position:relative;
+}
+
+.custom-caterer-image{
+  position: absolute;
+  height : 100px;
+  width : 250px;
+  left: -50px;
+  top: 40px;
+}
+
+
+.caterer-details {
+  
+  color: #bec0c8;
+  font-size: 15px;  
+
+}
+
+.caterer-info {
+  margin-left: 40px;
+  font-size: 15px;
+  max-width: 538px;
+  margin: 0;
+  font-weight: 300;
+  text-transform: capitalize;
+  padding-top: 50px;
+  padding-left: 50px;
+}
+
+.caterer-name {
+  font-size: 32px;
+  color: #fff
 }
