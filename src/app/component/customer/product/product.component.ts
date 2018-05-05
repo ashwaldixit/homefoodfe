@@ -1,10 +1,11 @@
+import { CatererService } from './../../../services/caterer.service';
+import { CategoryService } from './../../../services/category.service';
+import { Caterer } from './../../../model/caterer.model';
+import { Category } from './../../../model/category.model';
+import { ProductService } from './../../../services/product.service';
+import { Product } from './../../../model/product.model';
 import { Component, OnInit } from '@angular/core';
-import {Product} from '../../model/product.model'
-import {ProductService} from '../../services/product.service'
-import {Category} from '../../model/category.model'
-import {Caterer} from '../../model/caterer.model'
-import {CategoryService} from '../../services/category.service'
-import {CatererService} from '../../services/caterer.service'
+
 
 
 @Component({

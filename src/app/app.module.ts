@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {ProductComponent} from './component/product/product.component';
+import {ProductComponent} from './component/customer/product/product.component';
 import { HttpModule , Headers } from '@angular/http';
 import {CustomerHeader} from './component/header/customerheader.component'
 
