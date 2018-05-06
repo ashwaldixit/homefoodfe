@@ -8,15 +8,11 @@ export class Category {
 
     createdDate: Date
 
-
     lastModifiedDate: Date
-
 
     recordStatus: string
 
-
     products: Product[]
-
 
     version: Number
 }
