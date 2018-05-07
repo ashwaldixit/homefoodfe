@@ -14,4 +14,9 @@ export class RegisterComponent {
         console.log("Inside..")
     }
 
+    ngOnInit() {
+
+        
+    }
+
 }

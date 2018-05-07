@@ -1,6 +1,6 @@
-//import {Customer} from './customer.model'
 
 import {Product} from './product.model'
+import { User } from './user.model';
 
 export class Order {
       orderid : Number
@@ -13,7 +13,7 @@ export class Order {
 
 	  orderStatus : string;
 
-	 // customer : Customer
+	  customer : User
 
 	  product: Product
 
