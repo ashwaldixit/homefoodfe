@@ -1,3 +1,5 @@
+import { ProductCreateComponent } from './component/caterer/productcreate/productcreate.component';
+import { ProductCreate } from './model/productcreate.model';
 import { LoginComponent } from './component/login/login.component';
 import { CartComponent } from './component/customer/cart/cart.component';
 import { RegisterComponent } from './component/register/register.component';
@@ -24,6 +26,7 @@ const routes: Routes = [
   { path: 'product', component: ProductComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'productcreate', component: ProductCreateComponent },
   { path: 'cart', component: CartComponent }]
 
 
@@ -34,7 +37,8 @@ const routes: Routes = [
     CustomerHeader,
     RegisterComponent,
     CartComponent,
-    LoginComponent
+    LoginComponent,
+    ProductCreateComponent
   ],
   imports: [
     BrowserModule,
