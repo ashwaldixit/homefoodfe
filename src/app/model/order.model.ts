@@ -1,4 +1,4 @@
-import {Customer} from './customer.model'
+//import {Customer} from './customer.model'
 
 import {Product} from './product.model'
 
@@ -13,7 +13,7 @@ export class Order {
 
 	  orderStatus : string;
 
-	  customer : Customer
+	 // customer : Customer
 
 	  product: Product
 

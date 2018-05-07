@@ -1,3 +1,4 @@
+import { Category } from './../model/category.model';
 import { Injectable} from '@angular/core';
 import {HttpService} from '../services/http.service';
 
@@ -8,6 +9,10 @@ export class CategoryService{
 
     getCategories(){
         return this.httpService.callApiObservable(`/categories/active`,"GET",null,null)
+    }
+
+    createCategory(category : Category){
+        return this.httpService.callApiObservable('/categories',"POST",category,null);
     }
 
 }

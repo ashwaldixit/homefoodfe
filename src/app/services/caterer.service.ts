@@ -1,3 +1,4 @@
+import { Caterer } from './../model/caterer.model';
 import { Injectable} from '@angular/core';
 import {HttpService} from '../services/http.service';
 
@@ -8,6 +9,10 @@ export class CatererService {
 
     getCaterers(){
         return this.httpService.callApiObservable(`/caterers/active`,"GET",null,null)
+    }
+
+    getProductOfCaterer(caterer : string){
+        return this.httpService.callApiObservable(`/products/caterer/active/caterer`,"GET",null,null);
     }
 
 }
