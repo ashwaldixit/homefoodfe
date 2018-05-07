@@ -1,3 +1,4 @@
+import { Routes, Router, RouterModule } from '@angular/router';
 import { Cart } from './../../../model/cart.model';
 import { CatererService } from './../../../services/caterer.service';
 import { CategoryService } from './../../../services/category.service';
@@ -22,7 +23,7 @@ export class ProductComponent implements OnInit {
   caterers: Caterer[];
 
   categories: Category[];
-  constructor(private productService: ProductService, private categoryService: CategoryService, private catererService: CatererService, private cartService: CartService, private cartComponent: CartComponent) { }
+  constructor(private productService: ProductService, private categoryService: CategoryService, private catererService: CatererService, private cartService: CartService, private router: Router) { }
 
   ngOnInit() {
     this.getProducts()
@@ -61,9 +62,10 @@ export class ProductComponent implements OnInit {
     //   "orders": null,
     //   "addresses": null
     // }
-    this.cartComponent.addProductsToCart(cart);
-    // this.cartService.addToCart(cart).subscribe(res => {
-    //   console.log("res:::::" + JSON.stringify(res));
-    // })
+    // this.cartComponent.addProductsToCart(cart);
+    this.cartService.addToCart(cart).subscribe(res => {
+      console.log("res:::::" + JSON.stringify(res));
+      this.router.navigate(['/product']);
+    })
   }
 }

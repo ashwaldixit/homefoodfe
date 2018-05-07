@@ -1,4 +1,4 @@
-import { Customer } from './../../model/customer.model';
+import { User } from './../../model/user.model';
 import { Component,OnInit } from '@angular/core';
 import { CustomerService } from '../../services/customer.service';
 
@@ -11,7 +11,7 @@ import { CustomerService } from '../../services/customer.service';
 
 export class CustomerComponent implements OnInit {
 
-    cusomter : Customer;
+    cusomter : User;
     ngOnInit(){
         this.getCustomer()
     }

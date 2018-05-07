@@ -8,8 +8,6 @@ export class CartService {
     constructor(private httpService: HttpService) { }
 
     addToCart(cart: Cart) {
-        console.log("inside Service...");
-        console.log("cart:::" + JSON.stringify(cart));
         return this.httpService.callApiObservable(`/cart`, "POST", cart, null)
     }
 
