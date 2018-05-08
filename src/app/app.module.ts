@@ -1,3 +1,5 @@
+import { LocationCreateComponent } from './component/caterer/locations/locationcreate.component';
+import { CatererHeader } from './component/header/catererheader.component';
 import { ProductCreateComponent } from './component/caterer/productcreate/productcreate.component';
 import { ProductCreate } from './model/productcreate.model';
 import { LoginComponent } from './component/login/login.component';
@@ -9,6 +11,7 @@ import {FormsModule} from '@angular/forms'
 import {ProductComponent} from './component/customer/product/product.component';
 import { HttpModule , Headers } from '@angular/http';
 import {CustomerHeader} from './component/header/customerheader.component'
+
 
 import { AppComponent } from './app.component';
 import { CoolStorageModule } from 'angular2-cool-storage';
@@ -26,6 +29,7 @@ const routes: Routes = [
   { path: 'product', component: ProductComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'catererlocationcreate', component: LocationCreateComponent },
   { path: 'productcreate', component: ProductCreateComponent },
   { path: 'cart', component: CartComponent }]
 
@@ -35,10 +39,12 @@ const routes: Routes = [
     AppComponent,
     ProductComponent,
     CustomerHeader,
+    CatererHeader,
     RegisterComponent,
     CartComponent,
     LoginComponent,
-    ProductCreateComponent
+    ProductCreateComponent,
+    LocationCreateComponent
   ],
   imports: [
     BrowserModule,

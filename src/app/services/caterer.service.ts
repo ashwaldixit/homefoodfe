@@ -1,3 +1,4 @@
+import { CatererLocation } from './../model/catererlocation.model';
 import { Caterer } from './../model/caterer.model';
 import { Injectable} from '@angular/core';
 import {HttpService} from '../services/http.service';
@@ -13,6 +14,14 @@ export class CatererService {
 
     getProductOfCaterer(caterer : string){
         return this.httpService.callApiObservable(`/products/caterer/active/caterer`,"GET",null,null);
+    }
+
+    addCatererLocation(catererLocation : CatererLocation){
+        return this.httpService.callApiObservable("/caterers/location","POST",catererLocation,null);
+    }
+
+    getAllActiveCatererLocations(){
+        return this.httpService.callApiObservable("/caterers/active/locations","GET",null,null);
     }
 
 }
