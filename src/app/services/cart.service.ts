@@ -11,4 +11,12 @@ export class CartService {
         return this.httpService.callApiObservable(`/cart`, "POST", cart, null)
     }
 
+    getActiveProducts() {
+        return this.httpService.callApiObservable(`/cart/active`, "GET", null, null)
+    }
+
+    computeCart() {
+        return this.httpService.callApiObservable(`/cart/compute`, "GET", null, null)
+    }
+
 }

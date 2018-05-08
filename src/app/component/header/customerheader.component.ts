@@ -18,4 +18,11 @@ export class CustomerHeader {
     this.router.navigate(['']);
   }
 
+  goToCart() {
+    this.router.navigate(['/cart']);
+  }
+
+  goToHome() {
+    this.router.navigate(['/product']);
+  }
 }
