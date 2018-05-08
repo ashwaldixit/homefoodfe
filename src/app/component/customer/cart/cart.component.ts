@@ -1,6 +1,10 @@
+import { CartTotal } from './../../../model/carttotal.model';
 import { CartService } from './../../../services/cart.service';
 import { Component, OnInit } from '@angular/core';
 import { Cart } from '../../../model/cart.model';
+import { CartResponse } from '../../../model/cartresponse.model';
+import { ProductOrder } from '../../../model/productorder.model';
+import { Product } from '../../../model/product.model';
 
 
 
@@ -14,20 +18,40 @@ import { Cart } from '../../../model/cart.model';
 
 export class CartComponent implements OnInit {
 
-    cartObj: Cart
+    cartProducts: Cart[]
+    customerCart: CartTotal;
+    cartProductList: CartResponse[];
 
-    ngOnInit() { }
+    ngOnInit() {
+        this.getProducts()
+        this.computeCustomerCart()
+    }
 
     constructor(private cartService: CartService) { }
 
-    addProductsToCart(cart: Cart) {
-        console.log("Inside cart component..");
+    addProductsToCart(product: Product) {
+        var cart = new Cart();
+        cart.product = product;
         this.cartService.addToCart(cart).subscribe(res => {
-            console.log("INside...");
-            console.log("res::" + JSON.stringify(res));
+            this.computeCustomerCart()
         });
+    }
 
-        // this.cartObj = res;
-        // console.log("res::"+JSON.stringify(res))
+    getProducts() {
+        this.cartService.getActiveProducts().subscribe(res => {
+            this.cartProducts = res;
+        })
+    }
+
+    computeCustomerCart() {
+        this.cartService.computeCart().subscribe(res => {
+            if (res.carts) {
+                this.customerCart = res;
+            }
+        })
+    }
+
+    removeFromCart() {
+        
     }
 }

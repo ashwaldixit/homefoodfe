@@ -1,0 +1,61 @@
+<customerheader></customerheader>
+<h1>Shopping Cart</h1>
+<div class="card shopping-cart">
+    <div class="card-body" *ngIf="customerCart && customerCart.carts && customerCart.carts.length">
+        <p>
+            You have {{ customerCart.carts.length }} items in your shopping cart.
+            <button *ngIf="customerCart.carts.length" (click)="clearCart()" class="float-right btn btn-light btn-sm">Clear Shopping Cart</button>
+
+        </p>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Product</th>
+                <th class="text-center" style="width: 230px">Quantity</th>
+                <th class="text-right" style="width: 200px">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cartProduct of customerCart.carts">
+                <td>
+                    <div [style.backgroundImage]="'url(' + cartProduct.product.imageUrl + ')'" class="thumbnail">
+                    </div>
+                </td>
+                <td>
+                    {{ cartProduct.product.name }}
+                </td>
+                <td>
+                    <div class="row no-gutters">
+                        <div class="col-2">
+                            <button (click)="removeFromCart()" class="btn btn-secondary btn-block">-</button>
+                        </div>
+                        <div class="col text-center quantity">
+                            {{cartProduct.quantity}}
+                        </div>
+                        <div class="col-2">
+                            <button (click)="addProductsToCart(cartProduct.product)" class="btn btn-secondary btn-block">+</button>
+                        </div>
+                    </div>
+                </td>
+                <td class="text-right">
+                    {{ cartProduct.totalProductPrice }}
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th class="text-right">{{ customerCart.totalPrice}}</th>
+            </tr>
+            <tr>
+                <th colspan="4">
+                    <a *ngIf="customerCart.carts.length" routerLink="/check-out" class="btn btn-primary">Check Out</a>
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
