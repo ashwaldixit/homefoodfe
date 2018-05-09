@@ -23,7 +23,7 @@ export class ProductComponent implements OnInit {
   caterers: Caterer[];
 
   categories: Category[];
-  constructor(private productService: ProductService, private categoryService: CategoryService, private catererService: CatererService, private cartService: CartService, private router: Router) { }
+  constructor(private productService: ProductService, private categoryService: CategoryService, private catererService: CatererService, private cartService: CartService, private router: Router, private cartComponent: CartComponent) { }
 
   ngOnInit() {
     this.getProducts()
@@ -45,10 +45,6 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart(product: Product) {
-    var cart = new Cart();
-    cart.product = product;
-    this.cartService.addToCart(cart).subscribe(res => {
-      this.router.navigate(['/product']);
-    })
+    this.cartComponent.addProductsToCart(product);
   }
 }

@@ -15,4 +15,6 @@ export class Cart {
 
     recordStatus: string;
 
+    quantity : number;
+
 }

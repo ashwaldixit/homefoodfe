@@ -18,6 +18,7 @@ import { Product } from '../../../model/product.model';
 
 export class CartComponent implements OnInit {
 
+    cart: Cart;
     cartProducts: Cart[]
     customerCart: CartTotal;
     cartProductList: CartResponse[];
@@ -30,9 +31,7 @@ export class CartComponent implements OnInit {
     constructor(private cartService: CartService) { }
 
     addProductsToCart(product: Product) {
-        var cart = new Cart();
-        cart.product = product;
-        this.cartService.addToCart(cart).subscribe(res => {
+        this.cartService.addToCart(product).subscribe(res => {
             this.computeCustomerCart()
         });
     }
@@ -51,7 +50,11 @@ export class CartComponent implements OnInit {
         })
     }
 
-    removeFromCart() {
-        
+    removeFromCart(product: Product) {
+        var productId : Number;
+        productId = product.productid;
+        this.cartService.removeProduct(productId).subscribe(res => {
+            this.computeCustomerCart();
+        })
     }
 }
