@@ -1,3 +1,4 @@
+import { CatererOrderComponent } from './component/caterer/orders/catererorder.component';
 import { LocationCreateComponent } from './component/caterer/locations/locationcreate.component';
 import { CatererHeader } from './component/header/catererheader.component';
 import { ProductCreateComponent } from './component/caterer/productcreate/productcreate.component';
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'catererlocationcreate', component: LocationCreateComponent },
   { path: 'productcreate', component: ProductCreateComponent },
+  { path: 'catererorders', component: CatererOrderComponent },
   { path: 'cart', component: CartComponent }]
 
 
@@ -44,7 +46,8 @@ const routes: Routes = [
     CartComponent,
     LoginComponent,
     ProductCreateComponent,
-    LocationCreateComponent
+    LocationCreateComponent,
+    CatererOrderComponent
   ],
   imports: [
     BrowserModule,

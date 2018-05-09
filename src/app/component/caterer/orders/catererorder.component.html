@@ -1,0 +1,14 @@
+  
+
+
+  <div>
+    <table class="table table-striped" cellpadding="10" >
+      <tr><th>Product</th><th>User</th><th>Delivery Date</th><th>Status</th></tr>
+      <tr *ngFor="let order of productOrders">
+      <td>{{order.product.name}}</td>
+      <td>{{order.customerOrder.customer.userName}}</td>
+      <td>{{order.deliverydate | date}}</td>
+      <td>{{order.orderStatus}}</td>
+    </tr> 
+    </table>
+  </div>
