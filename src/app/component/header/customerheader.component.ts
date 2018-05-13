@@ -5,8 +5,8 @@ import { Http } from '@angular/http';
 
 @Component({
   selector: 'customerheader',
-  templateUrl: './customerheader.component.html',
-  styleUrls: ['./customerheader.component.css'],
+  templateUrl: './customerhead.component.html',
+  styleUrls : ['./customerhead.component.css']
 })
 export class CustomerHeader {
   localStorage: CoolLocalStorage;

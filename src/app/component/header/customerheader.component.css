@@ -70,7 +70,8 @@
 }
 
 .product-overlay:hover{
-  opacity: 1;
+  /* opacity: 1; */
+  color: #ABE9FE
 } 
 
 .product-overlay h3{
@@ -205,8 +206,7 @@ h2.title {
 } */
 
 .single-products:hover .product-overlay {
-  display:block;
-  height:100%;
+  color: #ABE9FE 
 }
 
 .productinfo h2{
@@ -311,4 +311,8 @@ body {
   right: 0;
   left: 0;
   z-index: 1030;
+}
+
+.button-hover {
+  color: #ABE9FE
 }

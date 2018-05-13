@@ -12,6 +12,8 @@ import {FormsModule} from '@angular/forms'
 import {ProductComponent} from './component/customer/product/product.component';
 import { HttpModule , Headers } from '@angular/http';
 import {CustomerHeader} from './component/header/customerheader.component'
+import {CheckoutComponent} from './component/customer/checkout/checkout.component';
+import {AddressComponent} from './component/address/address.component';
 
 
 import { AppComponent } from './app.component';
@@ -33,7 +35,9 @@ const routes: Routes = [
   { path: 'catererlocationcreate', component: LocationCreateComponent },
   { path: 'productcreate', component: ProductCreateComponent },
   { path: 'catererorders', component: CatererOrderComponent },
-  { path: 'cart', component: CartComponent }]
+  { path: 'cart', component: CartComponent },
+  { path: 'checkout', component: CheckoutComponent },
+  { path: 'address', component: AddressComponent }]
 
 
 @NgModule({
@@ -47,7 +51,9 @@ const routes: Routes = [
     LoginComponent,
     ProductCreateComponent,
     LocationCreateComponent,
-    CatererOrderComponent
+    CatererOrderComponent,
+    CheckoutComponent,
+    AddressComponent
   ],
   imports: [
     BrowserModule,

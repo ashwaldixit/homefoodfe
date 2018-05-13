@@ -1,0 +1,25 @@
+<customerheader></customerheader>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 checkout-card address-cardleft" style="display: table-cell;border: 2px solid rgba(237, 237, 237, 1);">
+            <h3>Choose a address</h3>
+            <div class="row">
+                <div class="card col-md-3" *ngFor="let address of customerAddressList">
+                    <div class="table">
+                        <tr>
+                            {{address.user.userName}}
+                        </tr>
+                        <tr>
+                            {{address.addressLine1}}
+                            <br/> {{address.addressLine2}}
+                        </tr>
+                        <tr>
+                            {{userName.city}} {{userName.state}}
+                        </tr>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 checkout-card cart-cardleft" style="display: table-cell;border: 2px solid rgba(237, 237, 237, 1);">Cart is shown here</div>
+    </div>
+</div>
