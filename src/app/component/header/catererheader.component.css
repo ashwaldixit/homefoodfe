@@ -24,6 +24,7 @@
 .custom-navbar {
   box-shadow: 0 0 10px 0 rgba(50,50,50,.1);
   background-color: #FFF;
+  margin-bottom: 50px !important;
 }
 /*  */
 .custom-checkbox {
@@ -297,6 +298,7 @@ body {
   font-family: 'Roboto', sans-serif;
   position: relative;
   font-weight:400px;
+  padding-bottom: 50px !important;
 }
 
 
