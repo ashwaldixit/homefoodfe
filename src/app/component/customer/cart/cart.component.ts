@@ -10,8 +10,8 @@ import { Product } from '../../../model/product.model';
 
 @Component({
     selector: 'cart',
-    templateUrl: './cart.component.html',
-    styleUrls: ['./cart.component.css'],
+    templateUrl: './cart.html',
+    styleUrls: ['./cart.css'],
     providers: [CartService]
 })
 
