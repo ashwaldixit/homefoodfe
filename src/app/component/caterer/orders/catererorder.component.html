@@ -1,8 +1,8 @@
   
 <catererheader></catererheader>
 
-  <div class="container" style="padding-top:50px">
-    <table class="table table-striped" cellpadding="10" >
+  <div class="customcontainer">
+    <table class="table regcontainer" cellpadding="10" >
       <tr><th>Product</th><th>User</th><th>Delivery Date</th><th>Status</th></tr>
       <tr *ngFor="let order of productOrders">
       <td>{{order.product.name}}</td>

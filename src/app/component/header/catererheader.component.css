@@ -1,5 +1,5 @@
 .custom-navbar a {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
   font-size: 14px;
   text-transform: uppercase;
   display: inline-table;
@@ -8,6 +8,7 @@
   letter-spacing: 1px;
   padding-left: 2%;
   padding-right: 2%;
+  font-weight: bold;
   
 }
 

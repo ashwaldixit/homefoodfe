@@ -10,6 +10,9 @@
     padding-right: 2%;
 }
 
+.custnav {
+    background-color: white;
+}
 .custom-navbar a:hover {
     color: #00BCFB;
     border-bottom: 2px solid;

@@ -2,21 +2,21 @@
   width: auto;
   height: 2000px;
   padding-top: 5%;
-  background-color:#F9F9F9
+  background-image: url('../../../assets/images/presentation-bg.jpg');
+  
 }
 
 .regcontainer{
-  width: 80%;
+  width: 70%;
   height: auto;
   height: auto;margin: auto;  
   background-color:  white;
 }
 
 .registerform {
-  width: inherit;
+  width: 90%;
   height: auto;
   background-color:  white;
-  padding-top:5%;
   margin: auto;
 }
 
@@ -25,3 +25,4 @@
     display: inline-block;
     vertical-align: middle;
 }
+
