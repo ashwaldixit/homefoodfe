@@ -1,0 +1,70 @@
+<customerheader></customerheader>
+<div class="container">
+    <table class="table custom-table">
+        <thead>
+            <tr class="cart-header">
+                <th>Item</th>
+                <th>&nbsp;</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="cart-item" *ngFor="let cartProduct of customerCart.carts">
+                <td class="product-thumbnail">
+                    <img src="{{cartProduct.product.imageUrl}}" alt="">
+                </td>
+                <td class="cart-column">
+                    {{ cartProduct.product.name }}
+                </td>
+                <td class="cart-column">
+                    {{ cartProduct.product.price }}
+                </td>
+                <td class="cart-column">
+                    <input type="button" (click)="removeFromCart(cartProduct.product)" class="minus" value="-" />
+                    <input type="number" name="quantity" step="1" value="{{cartProduct.quantity}}" min="1" class="input-text qty-text" />
+                    <input type="button" (click)="addProductsToCart(cartProduct.product)" class="plus" value="+" />
+                </td>
+                <td class="cart-column-price">
+                    {{cartProduct.totalProductPrice}}
+                </td>
+                <td class="cart-column">
+                    <a href="#" class="remove" title="Remove this item">&times;</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="row">
+        <div class="col-md-4 offset-md-8">
+            <h2 class="cart-total-header">Cart Totals</h2>
+            <table class="table table-striped cart-totals">
+                <thead></thead>
+                <tbody>
+                    <tr>
+                        <td>Cart Subtotal</td>
+                        <td>{{ customerCart.totalPrice}}</td>
+                    </tr>
+                    <tr>
+                        <td>Shipping</td>
+                        <td>Free</td>
+                    </tr>
+                    <tr>
+                        <td>Order Price Total</td>
+                        <td class="cart-column-price" style="text-align: left">{{ customerCart.totalPrice}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3 offset-md-9">
+            <button class="btn btn-primary custom-proceed">Proceed to Checkout
+                <span class="fa fa-shopping-cart cart-icon">
+                </span>
+            </button>
+        </div>
+    </div>
+</div>
