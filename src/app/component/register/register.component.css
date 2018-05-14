@@ -1,18 +1,27 @@
 .customcontainer {
   width: auto;
   height: 2000px;
+  padding-top: 5%;
   background-color:#F9F9F9
 }
 
 .regcontainer{
-  width: 100%;
+  width: 80%;
   height: auto;
+  height: auto;margin: auto;  
   background-color:  white;
 }
 
 .registerform {
-  width: 80%;
+  width: inherit;
   height: auto;
   background-color:  white;
-  padding-top:10%;
+  padding-top:5%;
+  margin: auto;
+}
+
+.titlediv {
+  line-height: 1.5;
+    display: inline-block;
+    vertical-align: middle;
 }
