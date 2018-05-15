@@ -145,6 +145,13 @@
 .custom-proceed {
     background-color: #00BCFB;
     border: none;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0px;
+    border-radius: 2px;
+    font-size: 18px;
+    font-family: 'lato', sans-serif;
 }
 
 .cart-icon {
