@@ -12,8 +12,9 @@
         </form>
 
         <table class="table regcontainer" cellpadding="10" >
-            <tr><th>Area</th><th>City</th><th>State</th><th>ZipCode</th></tr>
-            <tr *ngFor="let loc of catererLocations">
+            <tr><th>#</th><th>Area</th><th>City</th><th>State</th><th>ZipCode</th></tr>
+            <tr *ngFor="let loc of catererLocations let i=index">
+            <td>{{i + 1}}</td> 
             <td>{{loc.area}}</td>
             <td>{{loc.city}}</td>
             <td>{{loc.state}}</td>

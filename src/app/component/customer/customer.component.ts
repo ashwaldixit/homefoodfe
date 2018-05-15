@@ -1,12 +1,12 @@
 import { User } from './../../model/user.model';
 import { Component,OnInit } from '@angular/core';
-import { CustomerService } from '../../services/customer.service';
+
 
 
 @Component({
     selector : 'customer',
     templateUrl : './customer.component.html',
-    providers : [CustomerService]
+    providers : []
 })
 
 export class CustomerComponent implements OnInit {
