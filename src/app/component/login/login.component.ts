@@ -17,18 +17,17 @@ export class LoginComponent implements OnInit {
     localStorage: CoolStorageModule;
     
 
-    loginUser: User;
+    user =new  User;
     constructor(private loginService: LoginService,private router: Router ,localStorage: CoolStorageModule) { 
         this.localStorage = localStorage;
     }
 
     ngOnInit() {}
 
-    login(email: string, password: string) {
-        var user = new User();
-        user.email = email;
-        user.password = password;
-        this.loginService.login(user).subscribe(res => 
+    login() {
+      
+      
+        this.loginService.login(this.user).subscribe(res => 
             localStorage.setItem('token',res.token)
         );
         if(localStorage.getItem('token') !== null) {

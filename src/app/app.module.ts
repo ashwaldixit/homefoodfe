@@ -1,3 +1,4 @@
+import { GeneralHeader } from './component/header/generalheader.component';
 import { CatererOrderComponent } from './component/caterer/orders/catererorder.component';
 import { LocationCreateComponent } from './component/caterer/locations/locationcreate.component';
 import { CatererHeader } from './component/header/catererheader.component';
@@ -46,6 +47,7 @@ const routes: Routes = [
     ProductComponent,
     CustomerHeader,
     CatererHeader,
+    GeneralHeader,
     RegisterComponent,
     CartComponent,
     LoginComponent,

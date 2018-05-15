@@ -1,0 +1,30 @@
+.custom-navbar a {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  display: inline-table;
+  color: #1e1e1e;
+  font-weight: 300;
+  letter-spacing: 1px;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.custnav {
+  background-color: white;
+}
+.custom-navbar a:hover {
+  color: #00BCFB;
+  border-bottom: 2px solid;
+  cursor: pointer;
+}
+
+
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
