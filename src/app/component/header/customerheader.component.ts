@@ -13,10 +13,7 @@ export class CustomerHeader {
   constructor(private _http: Http, private router: Router, localStorage: CoolLocalStorage) {
     this.localStorage = localStorage;
   }
-  onLogout() {
-    this.localStorage.setObject('token', null);
-    this.router.navigate(['']);
-  }
+
 
   goToCart() {
     this.router.navigate(['/cart']);
@@ -24,5 +21,11 @@ export class CustomerHeader {
 
   goToHome() {
     this.router.navigate(['/product']);
+  }
+
+  onLogout(){
+  	this.localStorage.setItem('token', null);
+    this.router.navigate([''])
+  	console.log('logged Out');
   }
 }

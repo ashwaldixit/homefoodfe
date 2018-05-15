@@ -27,12 +27,21 @@ export class LoginComponent implements OnInit {
     login() {
       
       
-        this.loginService.login(this.user).subscribe(res => 
-            localStorage.setItem('token',res.token)
-        );
-        if(localStorage.getItem('token') !== null) {
-            this.router.navigate(['/product']);
+        this.loginService.login(this.user).subscribe(res => {
+            localStorage.setItem('token',res.token);
+            if(res.token !== null) {
+                this.router.navigate(['/product']);
+            }else{
+                this.router.navigate(['/login']);
+            }
         }
+            
+        );
+        
+    }
+
+    signup(){
+        this.router.navigate(['/register']);
     }
 
 }

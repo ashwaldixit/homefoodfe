@@ -25,4 +25,5 @@ export class GeneralHeader {
   goToHome() {
     this.router.navigate(['/product']);
   }
+  
 }

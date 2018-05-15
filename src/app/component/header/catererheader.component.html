@@ -1,9 +1,12 @@
-<nav class="navbar navbar-light bg-light fixed-top">
+<nav class="navbar navbar-light bg-light fixed-top custnav">
     <a class="navbar-brand">Navbar</a>
     <div class="form-inline custom-navbar">
         <a class="navbar-brand" [routerLink]="['/productcreate']" routerLinkActive="active">Products</a>
         <a class="navbar-brand" [routerLink]="['/catererorders']" routerLinkActive="active">Orders</a>
         <a class="navbar-brand" [routerLink]="['/catererlocationcreate']" routerLinkActive="active">Locations</a>
-        <a class="navbar-brand" [routerLink]="['/logout']" routerLinkActive="active">Logout</a>
+        <a class="navbar-brand" (click)="onLogout();" routerLinkActive="active">Logout</a>   
     </div>
 </nav>
+<section>
+        <error></error>
+    </section>

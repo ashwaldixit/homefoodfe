@@ -1,3 +1,4 @@
+import { ErrorComponent } from './component/error/error.component';
 import { GeneralHeader } from './component/header/generalheader.component';
 import { CatererOrderComponent } from './component/caterer/orders/catererorder.component';
 import { LocationCreateComponent } from './component/caterer/locations/locationcreate.component';
@@ -30,6 +31,7 @@ import { from } from 'rxjs/observable/from';
 const routes: Routes = [
   
   // Home
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'product', component: ProductComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
@@ -51,6 +53,7 @@ const routes: Routes = [
     RegisterComponent,
     CartComponent,
     LoginComponent,
+    ErrorComponent,
     ProductCreateComponent,
     LocationCreateComponent,
     CatererOrderComponent,

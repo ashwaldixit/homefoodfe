@@ -5,6 +5,9 @@
         <a class="navbar-brand" [routerLink]="['/cart']" routerLinkActive="active">Cart</a>
         <a class="navbar-brand" [routerLink]="['/order']" routerLinkActive="active">Orders</a>
         <a class="navbar-brand" [routerLink]="['/account']" routerLinkActive="active">Account</a>
-        <a class="navbar-brand" [routerLink]="['/logout']" routerLinkActive="active">Logout</a>
-    </div>
+        <a class="navbar-brand" (click)="onLogout();" routerLinkActive="active">Logout</a>
+     </div>
 </nav>
+<section>
+        <error></error>
+    </section>

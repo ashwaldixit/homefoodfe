@@ -10,9 +10,12 @@
                     <input type="email" class="form-control" id="inputEmail4" placeholder="Email" [(ngModel)]="user.email" name="user.email">
                 </div>
                 <div class="form-group">
-                    <input type="passowrd" class="form-control" id="inputPassword4" placeholder="Password" [(ngModel)]="user.password" name="user.userName">
+                    <input type="password" class="form-control" id="inputPassword4" placeholder="Password" [(ngModel)]="user.password" name="user.userName">
                 </div>
                 <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
+                <br>
+                if you don't have account then please <button type="submit" class="btn btn-primary" (click)="signup()">Sign Up</button>
+
             </form>
         </div>
     </div>

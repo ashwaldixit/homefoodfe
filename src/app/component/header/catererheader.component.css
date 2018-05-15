@@ -20,3 +20,8 @@
 
 .fixed-top {
 }
+
+.custnav {
+  background-color: white !important;
+  border-bottom: 2px solid #eaeaea !important;
+}

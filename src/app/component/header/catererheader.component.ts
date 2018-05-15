@@ -13,9 +13,11 @@ export class CatererHeader {
   constructor(private _http: Http, private router: Router, localStorage: CoolLocalStorage) {
     this.localStorage = localStorage;
   }
-  onLogout() {
-    this.localStorage.setObject('token', null);
-    this.router.navigate(['']);
+
+  onLogout(){
+  	this.localStorage.setItem('token', null);
+    this.router.navigate([''])
+  	console.log('logged Out');
   }
 
 }
