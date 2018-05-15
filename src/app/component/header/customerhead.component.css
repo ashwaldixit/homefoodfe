@@ -11,15 +11,15 @@
 }
 
 .custnav {
-    background-color: white;
+    background-color: white !important;
+    border-bottom: 2px solid #eaeaea !important;
 }
+
 .custom-navbar a:hover {
     color: #00BCFB;
     border-bottom: 2px solid;
     cursor: pointer;
 }
-
-
 
 .fixed-top {
     position: fixed;
@@ -27,4 +27,11 @@
     right: 0;
     left: 0;
     z-index: 1030;
+}
+
+.navbar-brand {
+    color: #00BCFB !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 25px;
 }
