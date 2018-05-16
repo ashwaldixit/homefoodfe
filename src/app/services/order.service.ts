@@ -9,7 +9,14 @@ export class OrderService {
     constructor(private httpService: HttpService) { }
 
     addProductOrder(productOrder: ProductOrder) {
-        this.httpService.callApiObservable("/productorders", "POST", productOrder, null);
+        return this.httpService.callApiObservable("/productorders", "POST", productOrder, null);
     }
 
+    getAllOrders() {
+        return this.httpService.callApiObservable("/customerorders/all", "GET", null, null);
+    }
+
+    getByCustomerOrder(customerOrderId: number) {
+        return this.httpService.callApiObservable(`/productorders/customerorder/${customerOrderId}`, "GET", null, null)
+    }
 }

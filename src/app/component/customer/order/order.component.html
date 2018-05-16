@@ -1,5 +1,44 @@
 <customerheader></customerheader>
-<div class="container customer-order">
+<!-- <div class="container customer-order">
     <p>Thank you for placing the
         <a href="#">order</a> with us</p>
+</div> -->
+<div class="container customer-order">
+    <p>My orders</p>
+    <table class="table order-table" *ngFor="let order of customerOrderResponse">
+        <thead>
+            <tr>
+                <th>
+                    <button class="btn btn-primary order-id">{{order.customerOrder?.customerorderid}}</button>
+                </th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th class="cart-column-header">Ordered on <br>
+                    {{order.customerOrder?.createdDate | date : 'short'}}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="order-item" *ngFor="let productOrder of order?.productOrders">
+                <td class="product-thumbnail">
+                    <img src="{{productOrder.product.imageUrl}}" alt="">
+                </td>
+                <td class="cart-column">
+                    {{productOrder.product.name}}
+                </td>
+                <td class="cart-column">
+                    <i class="fas fa-rupee-sign"></i>
+                    {{productOrder.product.price}}
+                </td>
+                <td class="cart-column">
+                    {{productOrder.orderedQuantity}}
+                </td>
+                <td class="cart-column">
+                        Delivered on <br>
+                    {{productOrder.deliverydate | date :'short'}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
