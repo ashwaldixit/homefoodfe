@@ -75,11 +75,7 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-<<<<<<< HEAD
   providers: [HttpService,ErrorService, AlwaysAuthGuard,CookieService],
-=======
-  providers: [HttpService, ErrorService, AlwaysAuthGuard],
->>>>>>> 1fdeafbb8c0bc1b166dfdd05e1961e6aabda1a97
   bootstrap: [AppComponent]
 })
 export class AppModule { }
