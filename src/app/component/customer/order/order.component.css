@@ -1,0 +1,14 @@
+.customer-order p {
+    margin: 0 auto;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 20px !important;
+}
+
+.customer-order {
+    padding-top: 5%;
+}
+
+.customer-order p a {
+    color: #17C8FF !important;
+}
