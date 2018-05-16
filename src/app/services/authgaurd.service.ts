@@ -13,9 +13,7 @@ export class AlwaysAuthGuard implements CanActivate {
         this.localStorage=localStorage;
     }
     canActivate() :Observable<boolean>{
-        console.log("token is " ,this.localStorage.getObject('token'))
         if(this.localStorage.getObject('token')){
-            console.log("in auth gaurd")
             return Observable.of(true);
         }else{
             window.alert("please login to proceed")

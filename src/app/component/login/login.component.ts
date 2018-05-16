@@ -25,10 +25,9 @@ export class LoginComponent implements OnInit {
     ngOnInit() {}
 
     login() {
-      
-      
         this.loginService.login(this.user).subscribe(res => {
             localStorage.setItem('token',res.token);
+            localStorage.setItem('role',res.userRole)
             if(res.token !== null) {
                 this.router.navigate(['/product']);
             }else{

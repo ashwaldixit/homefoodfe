@@ -15,6 +15,8 @@ export class GeneralHeader {
   }
   onLogout() {
     this.localStorage.setObject('token', null);
+    this.localStorage.setObject('role', null);
+
     this.router.navigate(['']);
   }
 

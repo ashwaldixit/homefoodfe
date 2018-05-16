@@ -24,7 +24,8 @@ export class CustomerHeader {
   }
 
   onLogout(){
-  	this.localStorage.setItem('token', null);
+    this.localStorage.setItem('token', null);
+    this.localStorage.setObject('role', null);
     this.router.navigate(['/login'])
   	console.log('logged Out');
   }

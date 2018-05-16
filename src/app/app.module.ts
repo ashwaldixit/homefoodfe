@@ -1,3 +1,4 @@
+import { Header } from './component/header/header.component';
 import { AlwaysAuthGuard } from './services/authgaurd.service';
 import { ErrorComponent } from './component/error/error.component';
 import { GeneralHeader } from './component/header/generalheader.component';
@@ -32,8 +33,8 @@ import { from } from 'rxjs/observable/from';
 const routes: Routes = [
   
   // Home
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: ProductComponent },
+  { path: '', redirectTo: '/product', pathMatch: 'full' },
+  { path: 'product', component: ProductComponent },
  
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
@@ -53,6 +54,7 @@ const routes: Routes = [
     CustomerHeader,
     CatererHeader,
     GeneralHeader,
+    Header,
     RegisterComponent,
     CartComponent,
     LoginComponent,
