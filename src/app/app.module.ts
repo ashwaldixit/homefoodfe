@@ -1,3 +1,4 @@
+import { AlwaysAuthGuard } from './services/authgaurd.service';
 import { ErrorComponent } from './component/error/error.component';
 import { GeneralHeader } from './component/header/generalheader.component';
 import { CatererOrderComponent } from './component/caterer/orders/catererorder.component';
@@ -31,16 +32,18 @@ import { from } from 'rxjs/observable/from';
 const routes: Routes = [
   
   // Home
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'product', component: ProductComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: ProductComponent },
+ 
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'catererlocationcreate', component: LocationCreateComponent },
-  { path: 'productcreate', component: ProductCreateComponent },
-  { path: 'catererorders', component: CatererOrderComponent },
+  { path: 'catererlocationcreate', component: LocationCreateComponent, canActivate: [AlwaysAuthGuard] },
+  { path: 'productcreate', component: ProductCreateComponent, canActivate: [AlwaysAuthGuard] },
+  { path: 'catererorders', component: CatererOrderComponent, canActivate: [AlwaysAuthGuard] },
   { path: 'cart', component: CartComponent },
   { path: 'checkout', component: CheckoutComponent },
-  { path: 'address', component: AddressComponent }]
+  { path: 'address', component: AddressComponent, canActivate: [AlwaysAuthGuard] },
+  {path: '**', component: ProductComponent},]
 
 
 @NgModule({
@@ -67,7 +70,7 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [HttpService,ErrorService],
+  providers: [HttpService,ErrorService, AlwaysAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

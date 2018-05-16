@@ -25,7 +25,7 @@ export class CustomerHeader {
 
   onLogout(){
   	this.localStorage.setItem('token', null);
-    this.router.navigate([''])
+    this.router.navigate(['/login'])
   	console.log('logged Out');
   }
 }
