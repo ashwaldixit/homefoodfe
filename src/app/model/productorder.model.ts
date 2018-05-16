@@ -16,4 +16,6 @@ export class ProductOrder {
     deliverydate: Date;
 
     customerOrder: Date;
+
+    quantity: number;
 }

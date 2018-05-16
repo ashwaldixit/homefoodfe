@@ -1,3 +1,5 @@
+import { CustomerOrder } from './../model/customerorder.model';
+import { CartTotal } from './../model/carttotal.model';
 import { HttpService } from './http.service';
 import { Injectable } from "@angular/core";
 
@@ -5,6 +7,14 @@ import { Injectable } from "@angular/core";
 @Injectable()
 export class CheckoutService {
 
-    private constructor(private httpService : HttpService) {}
+    constructor(private httpService: HttpService) { }
+
+    createProductOrder(cartTotal: CartTotal) {
+        return this.httpService.callApiObservable("/productorders", "POST", cartTotal, null)
+    }
+
+    createCustomerOrder(customerOrder: CustomerOrder) {
+        return this.httpService.callApiObservable("/customerorders", "POST", customerOrder, null)
+    }
 
 }
