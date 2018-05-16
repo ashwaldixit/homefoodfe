@@ -1,3 +1,4 @@
+import { CookieService } from 'ngx-cookie-service';
 import { Component, OnInit } from '@angular/core';
 import { CoolLocalStorage } from 'angular2-cool-storage';
 import { Routes, Router, RouterModule } from '@angular/router';
@@ -9,10 +10,10 @@ import { Http } from '@angular/http';
   styleUrls: ['./header.component.css']
 })
 export class Header implements OnInit{
-  localStorage: CoolLocalStorage;
+  localStorage: CookieService;
   isValidUser = false;
   isUser = false;
-  constructor(private _http: Http, private router: Router, localStorage: CoolLocalStorage) {
+  constructor(private _http: Http, private router: Router, localStorage: CookieService) {
     this.localStorage = localStorage;
   }
 
@@ -23,25 +24,27 @@ export class Header implements OnInit{
   }
 
   onLogout() {
-    this.localStorage.setObject('token', null);
-    this.localStorage.setObject('role', null);
-    this.router.navigate(['']);
+    this.localStorage.set('token', null);
+    this.localStorage.set('role', null);
+    this.router.navigate(['/login']);
   }
 
   
   isUserLoggedIn() {
-    if (this.localStorage.getItem('role') == 'User') {
-      console.log("role :",this.localStorage.getItem('role'))
+    if (this.localStorage.get('role') == 'User') {
+      console.log("role :",this.localStorage.get('role'))
       this.isUser = true;
     } else {
       this.isUser = false;
     }
   }
   isLoggedIn() {
-    if (this.localStorage.getItem('token')) {
-      console.log("logged :",this.localStorage.getItem('token'))
+    console.log("value : ",this.localStorage.get('token') )
+    if (this.localStorage.get('token').length>0) {
+      console.log("logged in true ")
       this.isValidUser = true;
     } else {
+      console.log("logged in false ")
       this.isValidUser = false;
     }
 

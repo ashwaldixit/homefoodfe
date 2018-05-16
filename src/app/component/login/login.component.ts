@@ -4,6 +4,7 @@ import { LoginService } from './../../services/login.service';
 import { Component, OnInit } from '@angular/core';
 import { CoolStorageModule } from 'angular2-cool-storage';
 import { Routes , Router ,  RouterModule} from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
     selector: 'login',
@@ -14,11 +15,10 @@ import { Routes , Router ,  RouterModule} from '@angular/router';
 
 
 export class LoginComponent implements OnInit {
-    localStorage: CoolStorageModule;
     
 
     user =new  User;
-    constructor(private loginService: LoginService,private router: Router ,localStorage: CoolStorageModule) { 
+    constructor(private loginService: LoginService,private router: Router ,private localStorage: CookieService) { 
         this.localStorage = localStorage;
     }
 
@@ -26,8 +26,8 @@ export class LoginComponent implements OnInit {
 
     login() {
         this.loginService.login(this.user).subscribe(res => {
-            localStorage.setItem('token',res.token);
-            localStorage.setItem('role',res.userRole)
+            this.localStorage.set('token',res.token);
+            this.localStorage.set('role',res.userRole)
             if(res.token !== null) {
                 this.router.navigate(['/product']);
             }else{

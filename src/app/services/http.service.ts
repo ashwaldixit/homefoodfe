@@ -1,3 +1,4 @@
+import { CookieService } from 'ngx-cookie-service';
 import { Injectable , EventEmitter} from '@angular/core';
 import { Http , Response}   from '@angular/http';
 import { Observable } from 	'rxjs/Observable' ;
@@ -17,11 +18,11 @@ export class HttpService {
 
 
 
-	localStorage: CoolLocalStorage;
+	localStorage: CookieService;
 	token :string ;
 	
 
-	constructor(private http : Http,private errorService:ErrorService , localStorage: CoolLocalStorage){
+	constructor(private http : Http,private errorService:ErrorService , localStorage: CookieService){
 		this.localStorage = localStorage; 
 	}
 
@@ -38,7 +39,7 @@ export class HttpService {
 		if(headers==null){
 			headers = this.getHeaders();
 		}
-		headers.append('token' , this.localStorage.getItem('token'));  
+		headers.append('token' , this.localStorage.get('token'));  
 
 		if(methodType==="GET"){
 			if(isJsonNotRequred){

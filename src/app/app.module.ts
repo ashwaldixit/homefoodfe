@@ -1,3 +1,4 @@
+import { CookieService } from 'ngx-cookie-service';
 import { Header } from './component/header/header.component';
 import { AlwaysAuthGuard } from './services/authgaurd.service';
 import { ErrorComponent } from './component/error/error.component';
@@ -35,7 +36,6 @@ const routes: Routes = [
   // Home
   { path: '', redirectTo: '/product', pathMatch: 'full' },
   { path: 'product', component: ProductComponent },
- 
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'catererlocationcreate', component: LocationCreateComponent, canActivate: [AlwaysAuthGuard] },
@@ -72,7 +72,7 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [HttpService,ErrorService, AlwaysAuthGuard],
+  providers: [HttpService,ErrorService, AlwaysAuthGuard,CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
