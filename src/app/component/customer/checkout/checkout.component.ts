@@ -6,6 +6,7 @@ import { AddressService } from '../../../services/address.service';
 import { CartService } from '../../../services/cart.service';
 import { CheckoutService } from '../../../services/checkout.service';
 import { CustomerOrder } from '../../../model/customerorder.model';
+import { Routes , Router ,  RouterModule} from '@angular/router';
 
 @Component({
     selector: 'checkout',
@@ -20,7 +21,7 @@ export class CheckoutComponent implements OnInit {
     customerCart: CartTotal;
     productOrder: ProductOrder
 
-    constructor(private addressService: AddressService, private cartService: CartService, private checkoutService: CheckoutService) { }
+    constructor(private addressService: AddressService,private router: Router, private cartService: CartService, private checkoutService: CheckoutService) { }
     ngOnInit() {
         this.getAllAdress();
         this.getActiveProducts();
@@ -45,9 +46,10 @@ export class CheckoutComponent implements OnInit {
     // }
 
     placeOrder() {
-        var customerOrder = new CustomerOrder();
-        this.checkoutService.createCustomerOrder(customerOrder).subscribe(res=>{
-            console.log("Created Product order....")
+        
+        this.checkoutService.createCustomerOrder().subscribe(res=>{
+            console.log(res);
+            this.router.navigate(['/order']);
         })
     }
 }

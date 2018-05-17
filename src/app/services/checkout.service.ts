@@ -13,8 +13,8 @@ export class CheckoutService {
         return this.httpService.callApiObservable("/productorders", "POST", cartTotal, null)
     }
 
-    createCustomerOrder(customerOrder: CustomerOrder) {
-        return this.httpService.callApiObservable("/customerorders", "POST", customerOrder, null)
+    createCustomerOrder() {
+        return this.httpService.callApiObservable("/customerorders", "POST", null, null)
     }
 
 }
