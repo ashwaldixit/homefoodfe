@@ -11,6 +11,8 @@ export class ProductOrder {
 
     orderStatus: string;
 
+    updateOrderStatus: string;
+
     product: Product;
 
     deliverydate: Date;

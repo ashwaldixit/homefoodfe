@@ -10,4 +10,8 @@ export class ProductOrderService{
         return this.httpService.callApiObservable(`/productorders/bydate?adddays=${days}`,"GET",null,null);
     }
 
+    updateProductOrder(productOrder){
+        return this.httpService.callApiObservable('/productorders',"PUT",productOrder,null);
+    }
+
 }

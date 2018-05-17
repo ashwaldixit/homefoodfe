@@ -1,3 +1,4 @@
+import { CustomerOrder } from './../../../model/customerorder.model';
 import { ProductOrder } from './../../../model/productorder.model';
 import { CartTotal } from './../../../model/carttotal.model';
 import { Address } from './../../../model/address.model';
@@ -5,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
 import { AddressService } from '../../../services/address.service';
 import { CartService } from '../../../services/cart.service';
 import { CheckoutService } from '../../../services/checkout.service';
-import { CustomerOrder } from '../../../model/customerorder.model';
 import { Routes , Router ,  RouterModule} from '@angular/router';
 
 @Component({
@@ -19,7 +19,10 @@ export class CheckoutComponent implements OnInit {
 
     customerAddressList: Address[];
     customerCart: CartTotal;
-    productOrder: ProductOrder
+    productOrder: ProductOrder;
+    address : Address;
+    customerOrder = new CustomerOrder ;
+
 
     constructor(private addressService: AddressService,private router: Router, private cartService: CartService, private checkoutService: CheckoutService) { }
     ngOnInit() {
@@ -46,10 +49,18 @@ export class CheckoutComponent implements OnInit {
     // }
 
     placeOrder() {
+
+        if(!this.customerOrder.address)
+            this.customerOrder.address=this.customerAddressList[0]
         
-        this.checkoutService.createCustomerOrder().subscribe(res=>{
+            console.log(this.customerOrder)
+        this.checkoutService.createCustomerOrder(this.customerOrder).subscribe(res=>{
             console.log(res);
             this.router.navigate(['/order']);
         })
+    }
+
+    addAddress(address){
+     this.customerOrder.address = address;
     }
 }
