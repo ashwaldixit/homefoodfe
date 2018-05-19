@@ -1,3 +1,4 @@
+import { AccountComponent } from './component/customer/account/account.component';
 import { CookieService } from 'ngx-cookie-service';
 import { Header } from './component/header/header.component';
 import { AlwaysAuthGuard } from './services/authgaurd.service';
@@ -38,6 +39,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/product', pathMatch: 'full' },
   { path: 'product', component: ProductComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'account', component: AccountComponent },
   { path: 'login', component: LoginComponent },
   { path: 'catererlocationcreate', component: LocationCreateComponent, canActivate: [AlwaysAuthGuard] },
   { path: 'productcreate', component: ProductCreateComponent, canActivate: [AlwaysAuthGuard] },
@@ -66,7 +68,8 @@ const routes: Routes = [
     CatererOrderComponent,
     CheckoutComponent,
     AddressComponent,
-    OrderComponent
+    OrderComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,

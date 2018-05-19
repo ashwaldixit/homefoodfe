@@ -1,0 +1,31 @@
+.customcontainer {
+  width: auto;
+  height: 500px;
+  padding-top: 1%;
+  background-image: url('../../../../assets/images/presentation-bg.jpg');  
+}
+
+.regcontainer{
+  width: 70%;
+  height: auto;
+  height: auto;margin: auto;  
+  background-color:  white;
+}
+
+.registerform {
+  width: 90%;
+  height: auto;
+  background-color:  white;
+  margin: auto;
+}
+
+.titlediv {
+  line-height: 1.5;
+    display: inline-block;
+    vertical-align: middle;
+}
+.profileImage {
+  height:  40%;
+    width: 50%;
+}
+

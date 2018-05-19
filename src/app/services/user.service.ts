@@ -7,14 +7,16 @@ export class UserService {
 
     constructor(private httpService : HttpService) {}
 
-    getCustomerById() {
-        // return this.httpService.callApiObservable(`/customers/${id}`,"GET",null,null)
+    getCustomer() {
+         return this.httpService.callApiObservable(`/customers`,"GET",null,null)
     }
 
     createUser(user : User){
         return this.httpService.callApiObservable('/customers',"POST",user, null);
     }
-
+    updateUser(user : User){
+        return this.httpService.callApiObservable('/customers',"PUT",user, null);
+    }
 
 
 }

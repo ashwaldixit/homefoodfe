@@ -14,4 +14,12 @@ export class AddressService {
     createAddress(address: Address) {
         return this.httpService.callApiObservable(`/address`, "POST", address, null);
     }
+
+    getActiveAndDefault(){
+        return this.httpService.callApiObservable('/address/activebyuser',"GET",null,null);
+    }
+
+    updateAddress(address){
+        return this.httpService.callApiObservable('/address',"PUT", address,null);
+    }
 }
