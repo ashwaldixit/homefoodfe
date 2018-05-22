@@ -190,3 +190,11 @@
     font-weight: 359;
     line-height: 18px;
   }
+
+  .place-custom {
+    background-color: #00BCFB;
+    float: right;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }

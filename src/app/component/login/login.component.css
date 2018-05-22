@@ -1,14 +1,12 @@
 .customcontainer {
 	width: auto;
-	height: 2000px;
+	height: 580px;
 	padding-top: 5%;
 	background-image: url('../../../assets/images/presentation-bg.jpg');
 }
 
 .regcontainer {
 	width: 30%;
-	height: auto;
-	height: auto;
 	margin: auto;
 	background-color: white;
 }
@@ -21,7 +19,6 @@
 }
 
 .titlediv {
-	line-height: 1.5;
 	display: inline-block;
 	vertical-align: middle;
 	letter-spacing: 2px;
@@ -36,4 +33,21 @@
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-size: 12px;
+}
+
+@media(max-width: 575px) {
+	.customcontainer {
+		width: 90%;
+		padding-top: 15%;
+	}
+	.regcontainer {
+		margin-left: 5%;
+		width: 100%;
+	}
+	.registerform {
+		width: 100%;
+	}
+	.titlediv {
+		font-size: 12px !important;
+	}
 }
