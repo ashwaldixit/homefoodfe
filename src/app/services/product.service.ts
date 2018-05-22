@@ -15,4 +15,8 @@ export class ProductService{
         return this.httpService.callApiObservable('/products/add',"POST",product,null);
     }
 
+    getAllActiveProducts(){
+        return this.httpService.callApiObservable('/products/active',"GET",null,null)
+    }
+
 }

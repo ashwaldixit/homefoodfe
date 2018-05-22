@@ -1,3 +1,4 @@
+import { CatererLocation } from './../../../model/catererlocation.model';
 import { Routes, Router, RouterModule } from '@angular/router';
 import { Cart } from './../../../model/cart.model';
 import { CatererService } from './../../../services/caterer.service';
@@ -23,17 +24,19 @@ export class ProductComponent implements OnInit {
   caterers: Caterer[];
 
   categories: Category[];
+  catererLocations : CatererLocation[];
   constructor(private productService: ProductService, private categoryService: CategoryService, private catererService: CatererService, private cartService: CartService, private router: Router, private cartComponent: CartComponent) { }
 
   ngOnInit() {
     this.getProducts()
     this.getCategories()
     this.getCaterers()
+    this.getCatererLocations(2)
   }
 
 
   getProducts() {
-    this.productService.getProducts("South Indian").subscribe(res => this.products = res);
+    this.productService.getAllActiveProducts().subscribe(res => this.products = res);
 
   }
   getCategories() {
@@ -46,5 +49,13 @@ export class ProductComponent implements OnInit {
 
   addToCart(product: Product) {
     this.cartComponent.addProductsToCart(product);
+  }
+
+  getProductsByCategory(category){
+    this.productService.getProducts(category).subscribe(res=>this.products=res);
+  }
+
+  getCatererLocations(catererid){
+    this.catererService.getAllActiveLocationsByCaterer(catererid).subscribe(res => this.catererLocations=res);
   }
 }

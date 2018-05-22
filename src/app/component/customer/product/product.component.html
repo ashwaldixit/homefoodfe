@@ -12,6 +12,12 @@
                     <h5 class="caterer-name">{{caterer.name}}</h5>
                     <p class="caterer-details">{{caterer.description}}</p>
                 </div>
+                <div>
+                    <p style="float: left;margin: auto">Locations : </p>
+                    <div *ngFor="let location of catererLocations">
+                     <p>{{location.area}}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -29,7 +35,7 @@
                                 <div class="form-inline">
                                     <!-- <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"> -->
                                     <label class="form-check-label panel-title " for="defaultCheck1">
-                                        <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+                                        <a data-toggle="collapse" data-parent="#accordian" (click)="getProductsByCategory(category.name)">
                                             {{category.name}}
                                         </a>
                                     </label>
