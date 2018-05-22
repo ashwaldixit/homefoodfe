@@ -4,21 +4,24 @@
     text-transform: uppercase;
     display: inline-table;
     color: #1e1e1e;
-    font-weight: 300;
-    letter-spacing: 1px;
-    padding-left: 2%;
-    padding-right: 2%;
+    font-weight: 350;
+    letter-spacing: 2px;
+    /* padding-left: 2%; */
+    /* padding-right: 2%; */
 }
 
 .custnav {
     background-color: white !important;
     border-bottom: 2px solid #eaeaea !important;
+    -webkit-transition-duration: 2s;
+    transition-duration: 2s;
 }
 
 .custom-navbar a:hover {
     color: #00BCFB;
     border-bottom: 2px solid;
     cursor: pointer;
+    font-weight: 350;
 }
 
 .fixed-top {
@@ -34,4 +37,9 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 25px;
+}
+
+.navbar-brand-custom {
+    text-align: center;
+    margin: 0 auto;
 }

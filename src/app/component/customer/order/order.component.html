@@ -10,8 +10,8 @@
                 <th></th>
                 <th></th>
                 <th></th>
-                <th class="cart-column-header">Ordered on <br>
-                    {{order.customerOrder?.createdDate | date : 'short'}}
+                <th class="cart-column-header">Ordered on
+                    <br> {{order.customerOrder?.createdDate | date : 'short'}}
                 </th>
             </tr>
         </thead>
@@ -31,13 +31,29 @@
                     {{productOrder.orderedQuantity}}
                 </td>
                 <td class="cart-column" *ngIf="productOrder.orderStatus =='Delivered'">
-                        Delivered on <br>
-                    {{productOrder.deliverydate | date :'short'}}
+                    Delivered on
+                    <br> {{productOrder.deliverydate | date :'short'}}
                 </td>
                 <td class="cart-column" *ngIf="productOrder.orderStatus !=='Delivered'">
                     {{productOrder.orderStatus}}
-               </td>
+                </td>
             </tr>
         </tbody>
     </table>
+    <div *ngIf="!customerOrderResponse">
+        <table class="table empty-cart">
+            <tbody>
+                <tr>
+                    <td class="no-items">
+                        You have no orders with us yet!
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="btn btn-primary custom-shop-now" [routerLink]="['/product']">SHOP NOW</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

@@ -1,6 +1,7 @@
   body {
     background: #E8EBEE;
     padding-top: 5%;
+    font-family: 'lato', sans-serif;
   }
 
   .address-table {
@@ -28,6 +29,7 @@
     font-size: 13px;
     font-family: 'lato', sans-serif;
     text-transform: uppercase;
+    letter-spacing: 2px;
   }
 
   .choose-addresss-header {

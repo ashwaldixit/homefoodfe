@@ -74,3 +74,25 @@
     letter-spacing: 1px;
     color: #00BCFB;
 }
+
+.no-items {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 15px;
+    color: #00BCFB;
+}
+
+.empty-cart {
+    border: 1px solid #eaeaea;
+    width: 80%;
+}
+
+.empty-cart tbody tr td{
+    border: 1px solid #eaeaea;
+}
+
+.custom-shop-now {
+    background-color: #00BCFB !important;
+    font-family: 'lato', sans-serif;
+    border: none;
+}
