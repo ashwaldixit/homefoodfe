@@ -12,10 +12,9 @@
                 <div class="form-group">
                     <input type="password" class="form-control" id="inputPassword4" placeholder="Password" [(ngModel)]="user.password" name="user.userName">
                 </div>
-                <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
+                <button type="submit" class="btn btn-primary login-btn" (click)="login()">Login</button>
                 <br>
-                if you don't have account then please <button type="submit" class="btn btn-primary" (click)="signup()">Sign Up</button>
-
+                If you don't have account then please <button type="submit" class="btn btn-primary login-btn" (click)="signup()">Sign Up</button>
             </form>
         </div>
     </div>

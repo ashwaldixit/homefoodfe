@@ -49,6 +49,10 @@
     vertical-align: middle;
     border-top: none;
     border-bottom: #eaeaea;
+    font-family: 'lato', sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .minus {
@@ -140,6 +144,9 @@
     font-size: 18px;
     text-align: left;
     margin-bottom: 3%;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #00BCFB;
 }
 
 .custom-proceed {
@@ -154,6 +161,29 @@
     font-family: 'lato', sans-serif;
 }
 
+.custom-shop-now {
+    background-color: #00BCFB !important;
+    font-family: 'lato', sans-serif;
+    border: none;
+}
+
 .cart-icon {
     background-color: #00A6E2;
+}
+
+.no-items {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 15px;
+    color: #00BCFB;
+}
+
+.empty-cart {
+    border: 1px solid #eaeaea;
+    width: 80%;
+    margin: 10% auto;
+}
+
+.empty-cart tbody tr td{
+    border: 1px solid #eaeaea;
 }

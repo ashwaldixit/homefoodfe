@@ -32,4 +32,7 @@ export class CartService {
         return this.httpService.callApiObservable(`/cart/product/` + productId + `/remove`, "GET", null, null)
     }
 
+    removeCart(cartId: Number) {
+        return this.httpService.callApiObservable(`/cart/` + cartId, "DELETE", null, null)
+    }
 }

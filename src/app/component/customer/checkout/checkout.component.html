@@ -1,28 +1,4 @@
 <header></header>
-<!-- <div class="container">
-    <div class="row">
-        <div class="col-md-8 checkout-card address-cardleft" style="display: table-cell;border: 2px solid rgba(237, 237, 237, 1);">
-            <h3>Choose a address</h3>
-            <div class="row">
-                <div class="card col-md-3" *ngFor="let address of customerAddressList">
-                    <div class="table">
-                        <tr>
-                            {{address.user.userName}}
-                        </tr>
-                        <tr>
-                            {{address.addressLine1}}
-                            <br/> {{address.addressLine2}}
-                        </tr>
-                        <tr>
-                            {{userName.city}} {{userName.state}}
-                        </tr>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 checkout-card cart-cardleft" style="display: table-cell;border: 2px solid rgba(237, 237, 237, 1);">Cart is shown here</div>
-    </div>
-</div> -->
 <div class="container">
     <div class="row address-box">
         <div class="col-md-6">
@@ -77,29 +53,36 @@
                         <th>Item</th>
                         <th>Price</th>
                         <th>Quantity</th>
-                        <th>Total</th>
+                        <th>SubTotal</th>
                         <th>&nbsp;</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr class="cart-item" *ngFor="let cartProduct of customerCart.carts">
+                <tbody >
+                    <tr class="cart-item" *ngFor="let cartProduct of customerCart?.carts">
                         <td class="cart-column">
-                            {{ cartProduct.product.name }}
+                            {{ cartProduct?.cart.product.name }}
                         </td>
                         <td class="cart-column">
-                            {{ cartProduct.product.price }}
+                            {{ cartProduct?.cart.product.price }}
                         </td>
                         <td class="cart-column">
-                            <input type="button" (click)="removeFromCart(cartProduct.product)" class="minus" value="-" />
-                            <input type="number" name="quantity" step="1" value="{{cartProduct.quantity}}" min="1" class="input-text qty-text" />
-                            <input type="button" (click)="addProductsToCart(cartProduct.product)" class="plus" value="+" />
+                            <input type="button" (click)="decreaseProductQty(cartProduct?.cart.product)" class="minus" value="-" />
+                            <input type="number" name="quantity" step="1" value="{{cartProduct?.cart.quantity}}" min="1" class="input-text qty-text" />
+                            <input type="button" (click)="increaseProductQty(cartProduct?.cart.product)" class="plus" value="+" />
                         </td>
                         <td class="cart-column-price">
                             {{cartProduct.totalProductPrice}}
                         </td>
                         <td class="cart-column">
-                            <a href="#" class="remove" title="Remove this item">&times;</a>
+                            <a (click)="removeProductCart(cartProduct?.cart.cartid)" class="remove" title="Remove this item">&times;</a>
                         </td>
+                    </tr>
+                    <tr class="cart-total">
+                        <td></td>
+                        <td></td>
+                        <td class="total-cart">Total</td>
+                        <td class="total-cart"> {{customerCart?.totalPrice}}</td>
+                        <td></td>
                     </tr>
                 </tbody>
             </table>

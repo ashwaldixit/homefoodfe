@@ -57,4 +57,10 @@ export class CartComponent implements OnInit {
             this.computeCustomerCart();
         })
     }
+
+    removeProductCart(cartId : Number) {
+        this.cartService.removeCart(cartId).subscribe(res => {
+            this.computeCustomerCart();
+        })
+    }
 }
