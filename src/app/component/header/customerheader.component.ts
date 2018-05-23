@@ -12,12 +12,13 @@ import { Http } from '@angular/http';
 })
 export class CustomerHeader implements OnInit{
   localStorage: CookieService;
-  cartCount : CartCount;
+  cartCount : number;
   constructor(private _http: Http, private router: Router, localStorage: CookieService, private cartService : CartService) {
     this.localStorage = localStorage;
   }
-  ngOnInit(){
-    this.cartService.getCount().subscribe(res => this.cartCount=res);
+  async ngOnInit(){
+    console.log("in init")
+    this.cartService.getCount().subscribe(res => this.cartCount=res.count);
   }
 
   goToCart() {

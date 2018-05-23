@@ -31,8 +31,14 @@ export class CartService {
 	}
 
     getCount(): Observable<CartCount> {
-        this.getActiveProducts().subscribe(res => {this.subject.count =res.length;});
-		return this.subject.asObservable();
+        let cartItems : Cart[];
+        this.getActiveProducts().subscribe(res => {cartItems =res;
+            this.cartCount.count = cartItems.length;
+            this.subject.next(this.cartCount);
+            return this.subject.asObservable();
+         }
+        );
+        return this.subject.asObservable();
 	}
 
     addToCart(product: Product) {

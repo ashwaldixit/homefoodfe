@@ -9,8 +9,8 @@
         <div class="form-inline my-2 my-lg-0 custom-navbar">
             <a class="navbar-brand" [routerLink]="['/product']" routerLinkActive="active">Home</a>
             <a class="navbar-brand" [routerLink]="['/cart']" routerLinkActive="active">Cart
-              <span class="badge badge-warning badge-pill" *ngIf="cartCount.count">
-                  {{cartCount?.count}}
+              <span class="badge badge-warning badge-pill" *ngIf="cartCount">
+                  {{cartCount}}
               </span>
             </a>
             <a class="navbar-brand" [routerLink]="['/order']" routerLinkActive="active">Orders</a>
