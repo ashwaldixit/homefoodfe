@@ -1,5 +1,5 @@
 import { CartTotal } from './../../../model/carttotal.model';
-import { CartService } from './../../../services/cart.service';
+import { CartService, CartCount } from './../../../services/cart.service';
 import { Component, OnInit } from '@angular/core';
 import { Cart } from '../../../model/cart.model';
 import { CartResponse } from '../../../model/cartresponse.model';
@@ -23,16 +23,22 @@ export class CartComponent implements OnInit {
     customerCart: CartTotal;
     cartProductList: CartResponse[];
 
+    cartCount : CartCount;
+
+
     ngOnInit() {
         this.getProducts()
         this.computeCustomerCart()
+        this.cartService.getCount().subscribe(res => this.cartCount=res);
     }
 
     constructor(private cartService: CartService) { }
 
+
     addProductsToCart(product: Product) {
         this.cartService.addToCart(product).subscribe(res => {
-            this.computeCustomerCart()
+            this.computeCustomerCart();
+            this.cartService.incrementCount();
         });
     }
 

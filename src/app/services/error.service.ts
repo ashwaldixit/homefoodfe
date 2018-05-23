@@ -13,8 +13,7 @@ export interface ErrorMessage {
 }
 
 @Injectable()
-export class ErrorService
-{
+export class ErrorService{
 	errorMessage : ErrorMessage;
 
 	private subject: Subject<ErrorMessage> = new Subject<ErrorMessage>();

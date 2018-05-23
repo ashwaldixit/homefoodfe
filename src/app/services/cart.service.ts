@@ -1,12 +1,39 @@
+import { CartCount } from './cart.service';
 import { Injectable } from '@angular/core';
 import { HttpService } from '../services/http.service';
 import { Cart } from '../model/cart.model';
 import { Product } from '../model/product.model';
+import { Subject } from 'rxjs/Subject';
+import { Observable } from 	'rxjs/Observable' ;
+
+
+export interface CartCount {
+     count : number;
+}
 
 @Injectable()
 export class CartService {
 
-    constructor(private httpService: HttpService) { }
+    cartCount : CartCount;
+    constructor(private httpService: HttpService) {
+       this.cartCount ={count:0};
+     }
+
+	private subject: Subject<CartCount> = new Subject<CartCount>();
+
+    incrementCount(): void {
+        let cartItems : Cart[];
+         this.getActiveProducts().subscribe(res => {cartItems =res;
+            this.cartCount.count = cartItems.length;
+            this.subject.next(this.cartCount);
+         }
+        );
+	}
+
+    getCount(): Observable<CartCount> {
+        this.getActiveProducts().subscribe(res => {this.subject.count =res.length;});
+		return this.subject.asObservable();
+	}
 
     addToCart(product: Product) {
         return this.httpService.callApiObservable(`/cart/product`, "POST", product, null)

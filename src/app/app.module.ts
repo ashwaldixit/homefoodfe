@@ -1,3 +1,4 @@
+import { CartService } from './services/cart.service';
 import { AccountComponent } from './component/customer/account/account.component';
 import { CookieService } from 'ngx-cookie-service';
 import { Header } from './component/header/header.component';
@@ -78,7 +79,7 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [HttpService,ErrorService, AlwaysAuthGuard,CookieService],
+  providers: [HttpService,ErrorService, AlwaysAuthGuard,CookieService,CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

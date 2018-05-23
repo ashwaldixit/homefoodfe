@@ -1,5 +1,6 @@
+import { CartCount, CartService } from './../../services/cart.service';
 import { CookieService } from 'ngx-cookie-service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CoolLocalStorage } from 'angular2-cool-storage';
 import { Routes, Router, RouterModule } from '@angular/router';
 import { Http } from '@angular/http';
@@ -9,12 +10,15 @@ import { Http } from '@angular/http';
   templateUrl: './customerhead.component.html',
   styleUrls : ['./customerhead.component.css']
 })
-export class CustomerHeader {
+export class CustomerHeader implements OnInit{
   localStorage: CookieService;
-  constructor(private _http: Http, private router: Router, localStorage: CookieService) {
+  cartCount : CartCount;
+  constructor(private _http: Http, private router: Router, localStorage: CookieService, private cartService : CartService) {
     this.localStorage = localStorage;
   }
-
+  ngOnInit(){
+    this.cartService.getCount().subscribe(res => this.cartCount=res);
+  }
 
   goToCart() {
     this.router.navigate(['/cart']);
