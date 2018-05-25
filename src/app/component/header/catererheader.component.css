@@ -1,15 +1,11 @@
 .custom-navbar a {
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   text-transform: uppercase;
   display: inline-table;
   color: #1e1e1e;
-  font-weight: 300;
-  letter-spacing: 1px;
-  padding-left: 2%;
-  padding-right: 2%;
-  font-weight: bold;
-  
+  font-weight: 400;
+  letter-spacing: 2px;
 }
 
 .custom-navbar a:hover {
@@ -18,10 +14,15 @@
   cursor: pointer;
 }
 
-.fixed-top {
-}
+.fixed-top {}
 
 .custnav {
   background-color: white !important;
   border-bottom: 2px solid #eaeaea !important;
+}
+
+@media(max-width:575px) {
+  .navbar-brand {
+    margin: 0 auto;
+  }
 }
