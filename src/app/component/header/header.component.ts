@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { CookieService } from 'ngx-cookie-service';
 import { Component, OnInit } from '@angular/core';
 import { CoolLocalStorage } from 'angular2-cool-storage';
@@ -13,7 +14,7 @@ export class Header implements OnInit{
   localStorage: CookieService;
   isValidUser = false;
   isUser = false;
-  constructor(private _http: Http, private router: Router, localStorage: CookieService) {
+  constructor(private _http: Http, private router: Router, localStorage: CookieService, private toastrService : ToastrService) {
     this.localStorage = localStorage;
   }
 
@@ -27,6 +28,7 @@ export class Header implements OnInit{
     this.localStorage.set('token', null);
     this.localStorage.set('role', null);
     this.router.navigate(['/login']);
+    this.toastrService.success("Successfully logged out")
   }
 
   

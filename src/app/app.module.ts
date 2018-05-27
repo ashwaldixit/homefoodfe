@@ -22,6 +22,7 @@ import { CustomerHeader } from './component/header/customerheader.component'
 import { CheckoutComponent } from './component/customer/checkout/checkout.component';
 import { AddressComponent } from './component/address/address.component';
 
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
 import { CoolStorageModule } from 'angular2-cool-storage';
@@ -31,7 +32,7 @@ import { HttpService } from './services/http.service';
 import { ErrorService } from './services/error.service';
 import { from } from 'rxjs/observable/from';
 import { OrderComponent } from './component/customer/order/order.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 const routes: Routes = [
@@ -75,11 +76,18 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     CoolStorageModule,
+    BrowserAnimationsModule,
     HttpModule,
     FormsModule,
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true 
+      //closeButton : true
+  }),
     RouterModule.forRoot(routes)
   ],
-  providers: [HttpService,ErrorService, AlwaysAuthGuard,CookieService,CartService],
+  providers: [HttpService,ErrorService, AlwaysAuthGuard,CookieService,CartService, ToastrService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

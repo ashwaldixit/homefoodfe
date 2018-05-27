@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { CookieService } from 'ngx-cookie-service';
 import { Component } from '@angular/core';
 import { CoolLocalStorage } from 'angular2-cool-storage';
@@ -11,7 +12,7 @@ import { Http } from '@angular/http';
 })
 export class CatererHeader {
   localStorage: CookieService;
-  constructor(private _http: Http, private router: Router, localStorage: CookieService) {
+  constructor(private _http: Http, private router: Router, localStorage: CookieService, private toastrService : ToastrService) {
     this.localStorage = localStorage;
   }
 
@@ -19,7 +20,8 @@ export class CatererHeader {
     this.localStorage.delete('token');
     this.localStorage.delete('role');
     // this.localStorage.clear();
-    this.router.navigate(['/login'])
+    this.router.navigate(['/login']);
+    this.toastrService.success("Successfully logged out")
   	console.log('logged Out');
   }
 

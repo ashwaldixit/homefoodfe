@@ -5,6 +5,8 @@ import { Component, OnInit } from '@angular/core';
 import { CoolStorageModule } from 'angular2-cool-storage';
 import { Routes , Router ,  RouterModule} from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
     selector: 'login',
@@ -18,7 +20,7 @@ export class LoginComponent implements OnInit {
     
 
     user =new  User;
-    constructor(private loginService: LoginService,private router: Router ,private localStorage: CookieService) { 
+    constructor(private loginService: LoginService,private router: Router ,private localStorage: CookieService, private toastrService : ToastrService   ) { 
         this.localStorage = localStorage;
     }
 
@@ -30,6 +32,7 @@ export class LoginComponent implements OnInit {
             this.localStorage.set('role',res.userRole)
             if(res.token !== null) {
                 this.router.navigate(['/product']);
+                this.toastrService.success('','Successfully Loggedin')
             }else{
                 this.router.navigate(['/login']);
             }

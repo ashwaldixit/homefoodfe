@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { CartCount, CartService } from './../../services/cart.service';
 import { CookieService } from 'ngx-cookie-service';
 import { Component, OnInit } from '@angular/core';
@@ -13,7 +14,7 @@ import { Http } from '@angular/http';
 export class CustomerHeader implements OnInit{
   localStorage: CookieService;
   cartCount : number;
-  constructor(private _http: Http, private router: Router, localStorage: CookieService, private cartService : CartService) {
+  constructor(private _http: Http, private router: Router, localStorage: CookieService, private cartService : CartService, private toastrService : ToastrService) {
     this.localStorage = localStorage;
   }
   async ngOnInit(){
@@ -31,7 +32,8 @@ export class CustomerHeader implements OnInit{
   onLogout(){
     this.localStorage.delete('token');
     this.localStorage.delete('role');
-    this.router.navigate(['/login'])
+    this.router.navigate(['/login']);
+    this.toastrService.success("Successfully logged out");
   	console.log('logged Out');
   }
 }
