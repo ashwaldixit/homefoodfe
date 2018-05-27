@@ -21,11 +21,14 @@ export class ProductCreateComponent implements OnInit{
   product = new  ProductCreate ;
   caterers: Caterer[];
   availabilities : String[];
+  products : Product[];
+  isAddNew : boolean= false;
 
   categories : Category[];
   constructor(private productService : ProductService,private categoryService : CategoryService,private catererService : CatererService,private codeTypeService : CodeTypeService){}
 
   ngOnInit(){
+    this.getProducts();
     this.getCategories();
     this.getAvailabilities();
   }
@@ -34,7 +37,7 @@ export class ProductCreateComponent implements OnInit{
   }
 
   addProduct(){
-    this.productService.addProduct(this.product).subscribe(res => this.product=res);
+    this.productService.addProduct(this.product).subscribe(res => {this.product=res; this.getProducts(); this.isAddNew=false;});
   }
 
   getAvailabilities(){
@@ -47,5 +50,13 @@ export class ProductCreateComponent implements OnInit{
   
   createProduct(){
     console.log(this.product)
+  }
+
+  addNew(){
+    this.isAddNew=true;
+  }
+
+  getProducts(){
+     return this.catererService.getProductsOfCaterer().subscribe(res => this.products=res);
   }
 }

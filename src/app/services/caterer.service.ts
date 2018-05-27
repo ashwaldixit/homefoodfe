@@ -12,8 +12,8 @@ export class CatererService {
         return this.httpService.callApiObservable(`/caterers/active`,"GET",null,null)
     }
 
-    getProductOfCaterer(caterer : string){
-        return this.httpService.callApiObservable(`/products/caterer/active/caterer`,"GET",null,null);
+    getProductsOfCaterer(){
+        return this.httpService.callApiObservable(`/caterers/products`,"GET",null,null);
     }
 
     addCatererLocation(catererLocation : CatererLocation){

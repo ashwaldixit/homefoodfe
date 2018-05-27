@@ -26,7 +26,7 @@ export class CatererOrderComponent implements OnInit{
   constructor(private productOrderService : ProductOrderService, private codeTypeService : CodeTypeService){}
 
   ngOnInit(){
-    this.getProductOrders(1);
+    this.getProductOrders(0);
     this.getOrderStatusValues();
    
   }

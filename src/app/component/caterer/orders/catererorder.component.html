@@ -1,6 +1,17 @@
 <header>
 </header>
 
+<ul class="nav nav-pills regcontainer">
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab"  (click)="getProductOrders(0)">Today</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" (click)="getProductOrders(1)">Tomorrow</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" (click)="getProductOrders(2)">Day After Tomorrow</a>
+    </li>
+  </ul>
 <div class="customcontainer">
   <table class="table regcontainer" cellpadding="10">
     <tr>

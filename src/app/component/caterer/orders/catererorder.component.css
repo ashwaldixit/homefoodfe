@@ -1,13 +1,14 @@
 .customcontainer {
   width: auto;
   height: 100vh;
-  padding-top: 5%;
+  padding-top: 2%;
   background-image: url('../../../../assets/images/presentation-bg.jpg');
   
 }
 .regcontainer{
   width: 80%;
   height: auto;
-  height: auto;margin: auto;  
-  background-color:  white;
+  /* height: auto; */
+  margin: auto;  
+  /* background-color:  white; */
 }
