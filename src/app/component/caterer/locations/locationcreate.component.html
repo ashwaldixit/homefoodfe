@@ -1,24 +1,46 @@
 <header></header>
 <div class="customcontainer">
-    <form>   
+  <div class="container">
+    <h3>Locations</h3>
+    <div class="row">
+      <div class="col-md6">
         <div class="form-group">
-          <label>Locations</label>
-          <select [(ngModel)]="catererLocation.location" (change)= "onChange($event)" name="locations">
+          <select class="form-control" [(ngModel)]="catererLocation.location" (change)="onChange($event)" name="locations">
             <option *ngFor="let location of locations" [ngValue]="location">{{location.area}}</option>
           </select>
         </div>
-      
-          <button type="submit" class="btn btn-primary" (click)="create()">Add</button>
-        </form>
+      </div>
+      <div class="col-md6">
+        <button type="submit" class="btn btn-primary" (click)="create()">Add</button>
+      </div>
+    </div>
 
-        <table class="table regcontainer" cellpadding="10" >
-            <tr><th>#</th><th>Area</th><th>City</th><th>State</th><th>ZipCode</th></tr>
-            <tr *ngFor="let loc of catererLocations let i=index">
-            <td>{{i + 1}}</td> 
-            <td>{{loc.area}}</td>
-            <td>{{loc.city}}</td>
-            <td>{{loc.state}}</td>
-            <td>{{loc.zipCode}}</td>
-          </tr> 
-          </table>
+  </div>
+  <!-- <form>
+    <div class="form-group">
+      <label>Locations</label>
+      <select class="form-control" [(ngModel)]="catererLocation.location" (change)="onChange($event)" name="locations">
+        <option *ngFor="let location of locations" [ngValue]="location">{{location.area}}</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="create()">Add</button>
+  </form> -->
+
+  <table class="table regcontainer" cellpadding="10">
+    <tr>
+      <th>#</th>
+      <th>Area</th>
+      <th>City</th>
+      <th>State</th>
+      <th>ZipCode</th>
+    </tr>
+    <tr *ngFor="let loc of catererLocations let i=index">
+      <td>{{i + 1}}</td>
+      <td>{{loc.area}}</td>
+      <td>{{loc.city}}</td>
+      <td>{{loc.state}}</td>
+      <td>{{loc.zipCode}}</td>
+    </tr>
+  </table>
 </div>

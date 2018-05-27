@@ -1,29 +1,35 @@
-  
-<header></header>
+<header>
+</header>
 
-  <div class="customcontainer">
-      <h2>Orders</h2>      
-    <table class="table regcontainer" cellpadding="10" >
-    
-      <tr><th>#</th><th>Product</th><th>User</th><th>Delivery Date</th><th>Status</th><th>update</th><th>Action</th></tr>
-      <tr *ngFor="let order of productOrders let i=index">
+<div class="customcontainer">
+  <table class="table regcontainer" cellpadding="10">
+    <tr>
+      <th>#</th>
+      <th>Product</th>
+      <th>User</th>
+      <th>Delivery Date</th>
+      <th>Status</th>
+      <th>Update</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let order of productOrders let i=index">
       <td>{{i + 1}}</td>
       <td>{{order.product.name}}</td>
       <td>{{order.customerOrder.customer.userName}}</td>
       <td>{{order.deliverydate | date}}</td>
       <td>{{order.orderStatus}}</td>
       <td>
-        <select [(ngModel)]="order.updateOrderStatus" (change)= "onChange($event)" name="locations">
+        <select [(ngModel)]="order.updateOrderStatus" (change)="onChange($event)" name="locations">
           <option></option>
           <option *ngFor="let orderStatus of orderstatuses" [ngValue]="orderStatus">{{orderStatus}}</option>
         </select>
       </td>
       <td *ngIf="order.updateOrderStatus">
-          <button type="button" class="btn btn-primary active" (click)="update(order)">Update</button>
+        <button type="button" class="btn btn-primary active" (click)="update(order)">Update</button>
       </td>
-      <td *ngIf="!order.updateOrderStatus">   
-          <button type="button" class="btn btn-primary disabled">Update</button>
+      <td *ngIf="!order.updateOrderStatus">
+        <button type="button" class="btn btn-primary disabled">Update</button>
       </td>
-    </tr> 
-    </table>
-  </div>
+    </tr>
+  </table>
+</div>

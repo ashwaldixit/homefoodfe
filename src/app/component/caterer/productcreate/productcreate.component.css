@@ -1,27 +1,49 @@
 .customcontainer {
   width: auto;
-  height: 2000px;
+  height: 100vh;
   padding-top: 5%;
   background-image: url('../../../../assets/images/presentation-bg.jpg');
-  
 }
 
-.regcontainer{
+.regcontainer {
   width: 70%;
   height: auto;
-  height: auto;margin: auto;  
-  background-color:  white;
+  height: auto;
+  margin: auto;
+  padding-bottom: 2%;
+  padding-top: 2%;
+  background-color: white;
+}
+
+@media(max-width:575px) {
+  .regcontainer {
+    width: 80%;
+  }
 }
 
 .registerform {
   width: 90%;
   height: auto;
-  background-color:  white;
+  background-color: white;
   margin: auto;
 }
 
 .titlediv {
-  line-height: 1.5;
-    display: inline-block;
-    vertical-align: middle;
+  display: inline-block;
+  vertical-align: middle;
+  letter-spacing: 2px;
+  font-family: 'lato', sans-serif;
+  text-transform: uppercase;
+  font-weight: 350 !important;
+  font-size: 25px !important;
+}
+
+.add-btn {
+  letter-spacing: 2px;
+  font-family: 'lato', sans-serif;
+  text-transform: uppercase;
+}
+
+.label-custom {
+  float: left !important;
 }
