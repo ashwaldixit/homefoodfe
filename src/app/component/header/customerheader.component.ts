@@ -17,7 +17,6 @@ export class CustomerHeader implements OnInit{
     this.localStorage = localStorage;
   }
   async ngOnInit(){
-    console.log("in init")
     this.cartService.getCount().subscribe(res => this.cartCount=res.count);
   }
 

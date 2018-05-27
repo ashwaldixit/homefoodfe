@@ -2,7 +2,9 @@
 <header></header>
 
   <div class="customcontainer">
+      <h2>Orders</h2>      
     <table class="table regcontainer" cellpadding="10" >
+    
       <tr><th>#</th><th>Product</th><th>User</th><th>Delivery Date</th><th>Status</th><th>update</th><th>Action</th></tr>
       <tr *ngFor="let order of productOrders let i=index">
       <td>{{i + 1}}</td>
