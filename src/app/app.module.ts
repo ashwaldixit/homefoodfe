@@ -1,3 +1,4 @@
+import { CatererHomeComponent } from './component/customer/caterer/catererhome.component';
 import { CartService } from './services/cart.service';
 import { AccountComponent } from './component/customer/account/account.component';
 import { CookieService } from 'ngx-cookie-service';
@@ -38,8 +39,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 const routes: Routes = [
 
   // Home
-  { path: '', redirectTo: '/product', pathMatch: 'full' },
-  { path: 'product', component: ProductComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: ProductComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'account', component: AccountComponent },
   { path: 'login', component: LoginComponent },
@@ -50,6 +51,7 @@ const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent },
   { path: 'address', component: AddressComponent, canActivate: [AlwaysAuthGuard] },
   { path: 'order', component: OrderComponent },
+  { path: 'catererhome/:catererName', component: CatererHomeComponent },
   { path: '**', component: ProductComponent }]
 
 
@@ -70,6 +72,7 @@ const routes: Routes = [
     CatererOrderComponent,
     CheckoutComponent,
     AddressComponent,
+    CatererHomeComponent,
     OrderComponent,
     AccountComponent
   ],

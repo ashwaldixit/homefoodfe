@@ -19,4 +19,9 @@ export class ProductService{
         return this.httpService.callApiObservable('/products/active',"GET",null,null)
     }
 
+    getAllActiveProductsOfCaterer(catererName){
+        return this.httpService.callApiObservable(`/caterers/${catererName}/products`,"GET",null,null)
+
+    }
+
 }

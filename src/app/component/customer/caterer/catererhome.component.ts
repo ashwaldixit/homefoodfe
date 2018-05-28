@@ -1,5 +1,5 @@
 import { CatererLocation } from './../../../model/catererlocation.model';
-import { Routes, Router, RouterModule } from '@angular/router';
+import { Routes, Router, RouterModule, ActivatedRoute } from '@angular/router';
 import { Cart } from './../../../model/cart.model';
 import { CatererService } from './../../../services/caterer.service';
 import { CategoryService } from './../../../services/category.service';
@@ -12,35 +12,47 @@ import { CartService } from '../../../services/cart.service';
 import { CartComponent } from '../cart/cart.component';
 
 
+
 @Component({
-  selector: 'product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css'],
+  selector: 'catererhome',
+  templateUrl: './catererhome.component.html',
+  styleUrls: ['./catererhome.component.css'],
   providers: [ProductService, CategoryService, CatererService, CartService, CartComponent]
 })
-export class ProductComponent implements OnInit {
+export class CatererHomeComponent implements OnInit {
 
   products: Product[];
   caterers: Caterer[];
 
   categories: Category[];
+  catererName : string;
   catererLocations : CatererLocation[];
-  constructor(private productService: ProductService, private categoryService: CategoryService, private catererService: CatererService, private cartService: CartService, private router: Router, private cartComponent: CartComponent) { }
+  constructor(private productService: ProductService, private categoryService: CategoryService, private catererService: CatererService, private cartService: CartService, private router: Router, private cartComponent: CartComponent,private _router : Router,
+    private route: ActivatedRoute) { 
+
+      this.route.params.subscribe((params) => { 
+        console.log(params.catererName)
+        if(params.catererName){
+            this.catererName = params.catererName ;
+        }
+    }); 
+
+    }
 
   ngOnInit() {
     this.getProducts()
     this.getCategories()
     this.getCaterers()
- 
+    this.getCatererLocations()
   }
 
 
   getProducts() {
-    this.productService.getAllActiveProducts().subscribe(res => this.products = res);
+    this.productService.getAllActiveProductsOfCaterer(this.catererName).subscribe(res => this.products = res);
 
   }
   getCategories() {
-    this.categoryService.getCategories().subscribe(res => this.categories = res);
+    this.categoryService.getCategoriesOfCaterer(this.catererName).subscribe(res => this.categories = res);
   }
 
   getCaterers() {
@@ -55,5 +67,8 @@ export class ProductComponent implements OnInit {
     this.productService.getProducts(category).subscribe(res=>this.products=res);
   }
 
-
+  getCatererLocations(){
+    console.log("name of caterer : ", this.catererName)
+    this.catererService.getAllActiveLocationsByCaterer(this.catererName).subscribe(res => this.catererLocations=res);
+  }
 }

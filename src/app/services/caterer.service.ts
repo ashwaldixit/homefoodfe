@@ -24,8 +24,9 @@ export class CatererService {
         return this.httpService.callApiObservable("/caterers/active/locations","GET",null,null);
     }
 
-    getAllActiveLocationsByCaterer(catererid){
-        return this.httpService.callApiObservable(`/caterers/activebycaterer/locations/${catererid}`,"GET",null,null)
+    getAllActiveLocationsByCaterer(catererName){
+        console.log("name  : ",catererName )
+        return this.httpService.callApiObservable(`/caterers/activebycaterer/locations/${catererName}`,"GET",null,null)
     }
 
 }

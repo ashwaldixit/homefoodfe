@@ -15,4 +15,8 @@ export class CategoryService{
         return this.httpService.callApiObservable('/categories',"POST",category,null);
     }
 
+    getCategoriesOfCaterer(catererName){
+        return this.httpService.callApiObservable(`caterers/${catererName}/categories`,"GET",null,null)
+    }
+
 }

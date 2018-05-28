@@ -1,0 +1,127 @@
+<header></header>
+<section class="custom-ecaterer">
+    <div class="container">
+        <div class="col-sm-12" *ngFor="let caterer of caterers">
+            <div class="col-sm-3">
+                <div class="custom-caterer-image">
+                    <img src="{{caterer.imageUrl}}" alt="" height="165" width="254">
+                </div>
+            </div>
+            <div class="col-sm-">
+                <div class="caterer-info">
+                    <h5 class="caterer-name">{{caterer.name}}</h5>
+                    <p class="caterer-details">{{caterer.description}}</p>
+                </div>
+                <div>
+                    <p style="float: left;margin: auto">Locations : </p>
+                    <div *ngFor="let location of catererLocations">
+                        <p>{{location.area}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<section class="custom-section">
+    <div class="container container-background">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="left-sidebar">
+                    <h2 class="title text-center">Category</h2>
+                    <div class="panel-group category-products" id="accordian">
+                        <div class="panel panel-default" *ngFor="let category of categories">
+                            <div class="panel-heading">
+                                <div class="form-inline">
+                                    <!-- <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"> -->
+                                    <label class="form-check-label panel-title " for="defaultCheck1">
+                                        <a data-toggle="collapse" data-parent="#accordian" (click)="getProductsByCategory(category.name)">
+                                            {{category.name}}
+                                        </a>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9 padding-right custom-products">
+                <div class="features_items">
+                    <h2 class="title text-center">Menu</h2>
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4 col-xs-12" *ngFor="let product of products">
+                            <!-- <div class="product-image-wrapper">
+                                <div class="single-products">
+                                    <div class="productinfo text-center">
+                                        <img src="{{product.imageUrl}}" alt="" />
+                                        <h5 class="custom-name">{{product.name}}</h5>
+                                        <p class="custom-name-p">{{product.category.name}}</p>
+                                    </div>
+                                    <div class="product-overlay">
+                                        <div class="overlay-content">
+                                            <a class="btn btn-default add-to-cart" (click)="addToCart(product)">
+                                                <i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <ul class="nav nav-pills nav-justified">
+                                        <li>
+                                            <i class="fa fa-rupee-sign"></i>{{product.price}}
+                                        </li>
+                                        <li style="text-align: right">
+                                            {{product.category.name}}
+                                        </li>
+                                    </ul> 
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td class="productinfo text-center">{{product.category.name}}</td>
+                                                <td>{{product.name}}</td>
+                                                <td>
+                                                    <i class="fa fa-rupee-sign"></i>{{product.price}}</td>
+                                            </tr>
+                                            <tr>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div> -->
+                            <table class="table custom-table">
+                                <tbody>
+                                    <tr>
+                                        <td class="productinfo text-center">
+                                            <img src="{{product.imageUrl}}" alt="" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="product-name-badge">
+                                            <span class="badge badge-pill badge-primary badge-primary-custom">{{product.category.name}}</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="product-desc">
+                                        <td class="product-name">
+                                            {{product.name}}
+                                        </td>
+                                        <td class="product-price">
+                                            <i class="fa fa-rupee-sign"></i>{{product.price}}</td>
+                                    </tr>
+                                    <tr>
+                                        <div class="product-overlay">
+                                            <div class="overlay-content">
+                                                <a class="btn btn-default add-to-cart" (click)="addToCart(product)">
+                                                    <i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            </div>
+                                        </div>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
