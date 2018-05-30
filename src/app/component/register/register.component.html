@@ -18,7 +18,7 @@
 
         <div class="form-row">
           <div class="form-group col-md-6">
-            <input type="password" class="form-control" id="password" placeholder="password" [(ngModel)]="user.password" name="user.password">
+            <input type="password" class="form-control" id="password" placeholder="Password" [(ngModel)]="user.password" name="user.password">
           </div>
           <div class="form-group col-md-6">
             <input type="password" class="form-control" id="confirmpassword" placeholder="Confirm Password" [(ngModel)]="user.confirmPassword"
@@ -27,7 +27,8 @@
         </div>
 
         <div class="form-group">
-          <input type="text" class="form-control" id="inputAddress" placeholder="Address Line 1" [(ngModel)]="address.addressLine1" name="address.addressLine1">
+          <input type="text" class="form-control" id="inputAddress" placeholder="Address Line 1" [(ngModel)]="address.addressLine1"
+            name="address.addressLine1">
         </div>
         <div class="form-group">
           <input type="text" class="form-control" id="inputAddress2" placeholder="Address Line 2" [(ngModel)]="address.addressLine2"
@@ -41,22 +42,21 @@
             <input type="text" class="form-control" id="inputZip" placeholder="Zip" [(ngModel)]="address.zipCode" name="address.zipCode">
           </div>
         </div>
-        <div class="form-group">
-          <div class="form-group" style="float: left;">
-            <div class="form-group" style="float: left;">
-              Role
-              <select [(ngModel)]="user.userRole" (change)="onChange($event)" name="userRole">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="label-custom">Role</label>
+              <select class="form-control" [(ngModel)]="user.userRole" (change)="onChange($event)" name="userRole">
                 <option *ngFor="let userRole of userRoles" [ngValue]="userRole">{{userRole}}</option>
               </select>
             </div>
           </div>
+          <div class="col-md-6">
+            
+          </div>
         </div>
-        <button type="submit" class="btn btn-primary" (click)="register()">Sign in</button>
+        <button type="submit" class="btn btn-primary sign-up-btn" (click)="register()">Sign Up</button>
       </form>
-
     </div>
-
   </div>
-
-
 </div>
