@@ -13,50 +13,50 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'product',
   templateUrl: './productcreate.component.html',
-  styleUrls : ['./productcreate.component.css'],
-  providers:[ProductService,CategoryService,CatererService,CodeTypeService]
+  styleUrls: ['./productcreate.component.css'],
+  providers: [ProductService, CategoryService, CatererService, CodeTypeService]
 })
-export class ProductCreateComponent implements OnInit{
-  
-  product = new  ProductCreate ;
+export class ProductCreateComponent implements OnInit {
+
+  product = new ProductCreate;
   caterers: Caterer[];
-  availabilities : String[];
-  products : Product[];
-  isAddNew : boolean= false;
+  availabilities: String[];
+  products: Product[];
+  isAddNew: boolean = false;
 
-  categories : Category[];
-  constructor(private productService : ProductService,private categoryService : CategoryService,private catererService : CatererService,private codeTypeService : CodeTypeService){}
+  categories: Category[];
+  constructor(private productService: ProductService, private categoryService: CategoryService, private catererService: CatererService, private codeTypeService: CodeTypeService) { }
 
-  ngOnInit(){
+  ngOnInit() {
     this.getProducts();
     this.getCategories();
     this.getAvailabilities();
   }
-  getCategories(){
-    this.categoryService.getCategories().subscribe(res => this.categories=res);
+  getCategories() {
+    this.categoryService.getCategories().subscribe(res => this.categories = res);
   }
 
-  addProduct(){
-    this.productService.addProduct(this.product).subscribe(res => {this.product=res; this.getProducts(); this.isAddNew=false;});
+  addProduct() {
+    this.productService.addProduct(this.product).subscribe(res => { this.product = res; this.getProducts(); this.isAddNew = false; });
   }
 
-  getAvailabilities(){
-      this.codeTypeService.getCodeTypes("availability").subscribe(res =>{ this.availabilities=res, console.log(this.availabilities)});
+  getAvailabilities() {
+    this.codeTypeService.getCodeTypes("availability").subscribe(res => { this.availabilities = res, console.log(this.availabilities) });
   }
 
   onChange(deviceValue) {
-		
+
   }
-  
-  createProduct(){
+
+  createProduct() {
     console.log(this.product)
   }
 
-  addNew(){
-    this.isAddNew=true;
+  addNew() {
+    this.isAddNew = true;
   }
 
-  getProducts(){
-     return this.catererService.getProductsOfCaterer().subscribe(res => this.products=res);
+  getProducts() {
+    return this.catererService.getProductsOfCaterer().subscribe(res => this.products = res);
   }
 }

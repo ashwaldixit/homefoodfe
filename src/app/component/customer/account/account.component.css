@@ -1,8 +1,5 @@
 .customcontainer {
   width: auto;
-  height: 500px;
-  padding-top: 1%;
-  background-image: url('../../../../assets/images/presentation-bg.jpg');
 }
 
 .regcontainer {
@@ -36,7 +33,7 @@
   font-family: 'lato', sans-serif;
   text-transform: uppercase;
   font-size: 25px;
-  font-weight:350;
+  font-weight: 350;
   letter-spacing: 1px;
   color: #00BCFB;
 }
@@ -47,4 +44,66 @@
   letter-spacing: 2px;
   border: none;
   margin-bottom: 1%;
+}
+
+.profile-info {
+  height: 12vh;
+  background-color: #fff !important;
+}
+
+.custom-header {}
+
+body {
+  background: #F1F2F6 !important;
+}
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: block;
+  vertical-align: middle;
+  margin-top: 10px;
+}
+
+.custom-section {
+  background-color: #F1F2F6 !important;
+}
+
+.profile-pic-div {
+  
+}
+
+.profile-info-detail {
+  margin-top: 2%;
+  background-color: #fff !important;
+}
+
+.hello-custom {
+  font-size: 12px;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.username-custom {
+  font-size: 16px;
+  text-align: left;
+  margin-top: -10px;
+  vertical-align: middle;
+}
+
+.table-custom {
+
+}
+
+.table-headers-custom {
+  font-family: 'lato', sans-serif;
+  font-size: 16px;
+}
+
+.no-bullets {
+  list-style-type: none;
+  text-align: left;
+  font-size: 14px !important;
+
 }
