@@ -30,6 +30,8 @@ export class CustomerHeader implements OnInit{
   }
 
   onLogout(){
+    this.localStorage.set('token', null);
+    this.localStorage.set('role', null);
     this.localStorage.delete('token');
     this.localStorage.delete('role');
     this.router.navigate(['/login']);

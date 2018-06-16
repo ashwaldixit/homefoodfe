@@ -31,7 +31,6 @@ export class CatererHomeComponent implements OnInit {
     private route: ActivatedRoute) { 
 
       this.route.params.subscribe((params) => { 
-        console.log(params.catererName)
         if(params.catererName){
             this.catererName = params.catererName ;
         }
@@ -52,6 +51,7 @@ export class CatererHomeComponent implements OnInit {
 
   }
   getCategories() {
+    console.log("name of caterer inc categories : "+ this.catererName)
     this.categoryService.getCategoriesOfCaterer(this.catererName).subscribe(res => this.categories = res);
   }
 
@@ -68,7 +68,6 @@ export class CatererHomeComponent implements OnInit {
   }
 
   getCatererLocations(){
-    console.log("name of caterer : ", this.catererName)
     this.catererService.getAllActiveLocationsByCaterer(this.catererName).subscribe(res => this.catererLocations=res);
   }
 }

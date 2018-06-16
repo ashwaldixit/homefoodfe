@@ -16,7 +16,7 @@ export class CategoryService{
     }
 
     getCategoriesOfCaterer(catererName){
-        return this.httpService.callApiObservable(`caterers/${catererName}/categories`,"GET",null,null)
+        return this.httpService.callApiObservable(`/caterers/${catererName}/categories`,"GET",null,null)
     }
 
 }

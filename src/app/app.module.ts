@@ -51,7 +51,7 @@ const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent },
   { path: 'address', component: AddressComponent, canActivate: [AlwaysAuthGuard] },
   { path: 'order', component: OrderComponent },
-  { path: 'catererhome/:catererName', component: CatererHomeComponent },
+  { path: 'caterer/:catererName', component: CatererHomeComponent },
   { path: '**', component: ProductComponent }]
 
 
