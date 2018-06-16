@@ -83,10 +83,10 @@ const routes: Routes = [
     HttpModule,
     FormsModule,
     ToastrModule.forRoot({
-      timeOut: 5000,
+      timeOut: 3000,
       positionClass: 'toast-top-right',
-      preventDuplicates: true 
-      //closeButton : true
+      preventDuplicates: true ,
+      closeButton : true
   }),
     RouterModule.forRoot(routes)
   ],
