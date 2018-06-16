@@ -4,16 +4,36 @@
     <table class="table order-table" *ngFor="let order of customerOrderResponse">
         <thead>
             <tr>
-                <th>
+                <th class="order-row">
                     <button class="btn btn-primary order-id">{{order.customerOrder?.customerorderid}}</button>
                 </th>
-                <th></th>
+                <th class="order-row"></th>
+                <th class="order-row"></th>
+                <th class="order-row cart-column-header">Ordered on
+                    <br> {{order.customerOrder?.createdDate | date : 'short'}}</th>
+                <th class="order-row">
+                    <button class="btn btn-primary need-help">
+                        <i class="fas fa-question"></i>
+                        Need Help</button>
+                    <button class="btn btn-primary need-help">
+                        <i class="fas fa-redo-alt"></i>
+                        ReOrder</button>
+                </th>
+            </tr>
+            <!-- <tr>
+                <th>
+                    
+                </th>
                 <th></th>
                 <th></th>
                 <th class="cart-column-header">Ordered on
                     <br> {{order.customerOrder?.createdDate | date : 'short'}}
                 </th>
-            </tr>
+                <th>
+                    <button class="btn btn-primary order-id">
+                        <i class="fas fa-question"></i>Need Help</button>
+                </th>
+            </tr> -->
         </thead>
         <tbody>
             <tr class="order-item" *ngFor="let productOrder of order?.productOrders">

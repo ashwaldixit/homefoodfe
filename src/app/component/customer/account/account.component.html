@@ -1,9 +1,9 @@
-<header></header>
+<!-- <header></header>
 
 <div class="customcontainer">
-    <div  style="width: 18rem;margin: auto">
-        <img class="profileImage" src="{{user.profileImage}}" alt="Card image cap">
-      </div>
+  <div style="width: 18rem;margin: auto">
+    <img class="profileImage" src="{{user.profileImage}}" alt="Card image cap">
+  </div>
   <div class="regcontainer">
     <div class="titlediv">
       <h3 class="custom-header">Profile</h3>
@@ -12,15 +12,18 @@
       <form>
         <div class="form-row">
           <div class="form-group col-md-6">
-            <input type="email" class="form-control" id="inputEmail4" placeholder="Email" [(ngModel)]="user.email" name="user.email" disabled=true>
+            <input type="email" class="form-control" id="inputEmail4" placeholder="Email" [(ngModel)]="user.email" name="user.email"
+              disabled=true>
           </div>
           <div class="form-group col-md-6">
-            <input type="text" class="form-control" id="inputPassword4" placeholder="User Name" [(ngModel)]="user.userName" name="user.userName" disabled=true>
+            <input type="text" class="form-control" id="inputPassword4" placeholder="User Name" [(ngModel)]="user.userName" name="user.userName"
+              disabled=true>
           </div>
         </div>
 
         <div class="form-group">
-          <input type="text" class="form-control" id="inputAddress" placeholder="Address Line 1" [(ngModel)]="address.addressLine1" name="address.addressLine1">
+          <input type="text" class="form-control" id="inputAddress" placeholder="Address Line 1" [(ngModel)]="address.addressLine1"
+            name="address.addressLine1">
         </div>
         <div class="form-group">
           <input type="text" class="form-control" id="inputAddress2" placeholder="Address Line 2" [(ngModel)]="address.addressLine2"
@@ -38,4 +41,59 @@
       </form>
     </div>
   </div>
-</div>
+</div> -->
+<header>
+</header>
+<section class="custom-section">
+  <div class="container customcontainer">
+    <div class="row">
+      <div class="col-md-3 custom-header">
+        <div class="row profile-info">
+          <div class="col-md-3">
+            <img src="{{user.profileImage}}" class="profile-pic" alt="">
+          </div>
+          <div class="col-md-9">
+            <p class="hello-custom">Hello,
+              <br>
+              <span class="username-custom">{{user.userName}}</span>
+            </p>
+          </div>
+        </div>
+        <div class="row profile-info-detail">
+          <table class="table table-custom">
+            <tbody>
+              <tr>
+                <td class="table-headers-custom">
+                  My Orders
+                </td>
+              </tr>
+              <tr>
+                <td class="table-headers-custom">
+                  Account Settings
+                  <ul class="no-bullets">
+                    <li>Personal Information</li>
+                    <li>My Address</li>
+                    <li>Other</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td class="table-headers-custom">
+                  Payments
+                </td>
+              </tr>
+              <tr>
+                <td class="table-headers-custom">
+                  Logout
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-md-8 profile-detail">
+          <p class="detail-area-header">Personal Information</p>
+      </div>
+    </div>
+  </div>
+</section>
