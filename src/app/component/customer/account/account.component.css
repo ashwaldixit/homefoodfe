@@ -107,3 +107,16 @@ body {
   font-size: 14px !important;
 
 }
+
+.profile-detail {
+  background-color: #fff !important;
+  height: 70vh;
+  margin-top: 10px;
+  margin-left: 1%;
+}
+
+.detail-area-header {
+  text-transform: uppercase;
+  color: #00BCFB;
+  font-size: 16px;
+}
