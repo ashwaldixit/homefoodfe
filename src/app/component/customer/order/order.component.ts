@@ -27,7 +27,6 @@ export class OrderComponent implements OnInit {
             this.customerOrderList = res;
             this.customerOrderList.forEach(element => {
                 this.customerOrderResponse = res;
-                console.log(res)
             });
         })
     }

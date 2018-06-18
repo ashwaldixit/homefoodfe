@@ -183,3 +183,15 @@
     width: 80%;
     margin: 10% auto;
 }
+
+.remove {
+    cursor: pointer !important;
+}
+
+.veg-icon {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    padding-left: 1%;
+    margin-top: -2px;
+}
