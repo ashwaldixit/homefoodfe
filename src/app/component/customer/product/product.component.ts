@@ -24,14 +24,14 @@ export class ProductComponent implements OnInit {
   caterers: Caterer[];
 
   categories: Category[];
-  catererLocations : CatererLocation[];
+  catererLocations: CatererLocation[];
   constructor(private productService: ProductService, private categoryService: CategoryService, private catererService: CatererService, private cartService: CartService, private router: Router, private cartComponent: CartComponent) { }
 
   ngOnInit() {
     this.getProducts()
     this.getCategories()
     this.getCaterers()
- 
+
   }
 
 
@@ -51,8 +51,8 @@ export class ProductComponent implements OnInit {
     this.cartComponent.addProductsToCart(product);
   }
 
-  getProductsByCategory(category){
-    this.productService.getProducts(category).subscribe(res=>this.products=res);
+  getProductsByCategory(category) {
+    this.productService.getProducts(category).subscribe(res => this.products = res);
   }
 
 

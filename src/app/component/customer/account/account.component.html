@@ -64,7 +64,10 @@
             <tbody>
               <tr>
                 <td class="table-headers-custom">
-                  My Orders
+                  <a [routerLink]="['/order']" routerLinkActive="active">My Orders</a> 
+                </td>
+                <td>
+                  
                 </td>
               </tr>
               <tr>
@@ -84,7 +87,7 @@
               </tr>
               <tr>
                 <td class="table-headers-custom">
-                  Logout
+                  <a (click)="onLogout()" routerLinkActive="active">Logout</a>
                 </td>
               </tr>
             </tbody>
@@ -92,7 +95,37 @@
         </div>
       </div>
       <div class="col-md-8 profile-detail">
-          <p class="detail-area-header">Personal Information</p>
+        <table class="table">
+          <tbody>
+            <tr>
+              <td class="detail-area-header">
+                Personal Information
+              </td>
+
+            </tr>
+            <tr>
+              <td>
+                <input type="text" class="form-control value-fields" id="inputPassword4" placeholder="User Name" [(ngModel)]="user.userName"
+                  name="user.userName" disabled=true>
+              </td>
+            </tr>
+            <tr>
+              <td class="detail-area">
+                Email
+              </td>
+
+            </tr>
+            <tr>
+              <td>
+                <input type="email" class="form-control value-fields" id="inputEmail4" placeholder="Email" [(ngModel)]="user.email" name="user.email"
+                  disabled=true>
+              </td>
+            </tr>
+            <tr>
+              <td>TODO :: We should capture gender info also</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
