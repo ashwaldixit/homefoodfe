@@ -1,0 +1,37 @@
+<header></header>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <navigator></navigator>
+        </div>
+        <div class=" col-md-8 profile-detail">
+            <table class="table address-table">
+                <thead>
+                    <tr>
+                        <td>
+                            <i class="fa fa-plus"></i>
+                            Add a new address
+                        </td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let address of addressList">
+                    <tr>
+                        <td>
+                            <span class="badge badge-info badge-info-address" *ngIf="address.isDefault">Default</span>
+                        </td>
+                        <td>
+                            <a class="update-address">Edit</a> |
+                            <a class="update-address">Delete</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>{{address?.addressLine1}} {{address?.addressLine2}}
+                            <br> {{address?.city}} {{address?.state}} - {{address?.zipCode}}</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

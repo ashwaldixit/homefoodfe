@@ -1,6 +1,9 @@
+import { ProfilePicComponent } from './component/customer/account/profilepic.component';
 import { CatererHomeComponent } from './component/customer/caterer/catererhome.component';
 import { CartService } from './services/cart.service';
 import { AccountComponent } from './component/customer/account/account.component';
+import { NavigatorComponent } from './component/customer/account/navigator.component';
+import { UserAddressComponent } from './component/customer/account/useraddress.component';
 import { CookieService } from 'ngx-cookie-service';
 import { Header } from './component/header/header.component';
 import { AlwaysAuthGuard } from './services/authgaurd.service';
@@ -43,6 +46,7 @@ const routes: Routes = [
   { path: 'home', component: ProductComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'account', component: AccountComponent },
+  { path: 'account/address', component: UserAddressComponent },
   { path: 'login', component: LoginComponent },
   { path: 'catererlocationcreate', component: LocationCreateComponent, canActivate: [AlwaysAuthGuard] },
   { path: 'productcreate', component: ProductCreateComponent, canActivate: [AlwaysAuthGuard] },
@@ -74,7 +78,10 @@ const routes: Routes = [
     AddressComponent,
     CatererHomeComponent,
     OrderComponent,
-    AccountComponent
+    AccountComponent,
+    NavigatorComponent,
+    ProfilePicComponent,
+    UserAddressComponent
   ],
   imports: [
     BrowserModule,
@@ -85,12 +92,12 @@ const routes: Routes = [
     ToastrModule.forRoot({
       timeOut: 3000,
       positionClass: 'toast-top-right',
-      preventDuplicates: true ,
-      closeButton : true
-  }),
+      preventDuplicates: true,
+      closeButton: true
+    }),
     RouterModule.forRoot(routes)
   ],
-  providers: [HttpService,ErrorService, AlwaysAuthGuard,CookieService,CartService, ToastrService],
+  providers: [HttpService, ErrorService, AlwaysAuthGuard, CookieService, CartService, ToastrService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,11 @@
+<div class="row profile-info" *ngIf="userForProfilePic">
+  <div class="col-md-3">
+    <img src="{{userForProfilePic.profileImage}}" class="profile-pic" alt="">
+  </div>
+  <div class="col-md-9">
+    <p class="hello-custom">Hello,
+      <br>
+      <span class="username-custom">{{userForProfilePic.userName}}</span>
+    </p>
+  </div>
+</div>

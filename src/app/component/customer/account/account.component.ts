@@ -7,7 +7,7 @@ import { CustomerHeader } from './../../header/customerheader.component'
 
 
 @Component({
-    selector: 'register',
+    selector: 'account',
     templateUrl: './account.component.html',
     styleUrls: ['./account.component.css'],
     providers: [UserService, AddressService,CustomerHeader]

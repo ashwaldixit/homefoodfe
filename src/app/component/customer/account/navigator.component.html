@@ -1,0 +1,42 @@
+<header>
+</header>
+<div class="container">
+    <profilepic></profilepic>
+    <div class="row profile-info-detail">
+        <table class="table table-custom">
+            <tbody>
+                <tr>
+                    <td class="table-headers-custom">
+                        <a [routerLink]="['/order']" routerLinkActive="active">My Orders</a>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-headers-custom">
+                        Account Settings
+                        <ul class="no-bullets">
+                            <li>
+                                <a [routerLink]="['/account']" routerLinkActive="active">Personal Information</a>
+                            </li>
+                            <li>
+                                <a [routerLink]="['/account/address']" routerLinkActive="active">My Address</a>
+                            </li>
+                            <li>Other</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-headers-custom">
+                        Payments
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-headers-custom">
+                        <a (click)="onLogout()" routerLinkActive="active">Logout</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
