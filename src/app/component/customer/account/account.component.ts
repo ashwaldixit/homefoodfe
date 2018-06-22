@@ -43,8 +43,4 @@ export class AccountComponent implements OnInit {
         this.addressService.updateAddress(this.address).subscribe(res => { this.address = res, this.getActiveAndDefaultAddress() });
     }
 
-    onLogout() {
-        this.customerHeader.onLogout();
-    }
-
 }

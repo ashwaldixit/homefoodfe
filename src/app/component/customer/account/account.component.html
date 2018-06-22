@@ -1,40 +1,42 @@
 <header></header>
-<div class="container">
-  <div class="row">
-    <div class="col-md-3">
-      <navigator></navigator>
-    </div>
-    <div class=" col-md-8 profile-detail">
-      <table class="table">
-        <tbody>
-          <tr>
-            <td class="detail-area-header">
-              Personal Information
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input type="text" class="form-control value-fields" id="inputPassword4" placeholder="User Name" [(ngModel)]="user.userName"
-                name="user.userName" disabled=true>
-            </td>
-          </tr>
-          <tr>
-            <td class="detail-area">
-              Email
-            </td>
+<body class="profile-body">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <navigator></navigator>
+      </div>
+      <div class=" col-md-8 profile-detail">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td class="detail-area-header">
+                Personal Information
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="text" class="form-control value-fields" id="inputPassword4" placeholder="User Name" [(ngModel)]="user.userName"
+                  name="user.userName" disabled=true>
+              </td>
+            </tr>
+            <tr>
+              <td class="detail-area">
+                Email
+              </td>
 
-          </tr>
-          <tr>
-            <td>
-              <input type="email" class="form-control value-fields" id="inputEmail4" placeholder="Email" [(ngModel)]="user.email" name="user.email"
-                disabled=true>
-            </td>
-          </tr>
-          <tr>
-            <td>TODO :: We should capture gender info also</td>
-          </tr>
-        </tbody>
-      </table>
+            </tr>
+            <tr>
+              <td>
+                <input type="email" class="form-control value-fields" id="inputEmail4" placeholder="Email" [(ngModel)]="user.email" name="user.email"
+                  disabled=true>
+              </td>
+            </tr>
+            <tr>
+              <td>TODO :: We should capture gender info also</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-</div>
+</body>
