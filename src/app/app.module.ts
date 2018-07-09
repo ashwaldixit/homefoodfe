@@ -1,3 +1,4 @@
+import { CustomerSupportComponet } from './component/customer/support/customer.support.component';
 import { ProfilePicComponent } from './component/customer/account/profilepic.component';
 import { CatererHomeComponent } from './component/customer/caterer/catererhome.component';
 import { CartService } from './services/cart.service';
@@ -56,6 +57,7 @@ const routes: Routes = [
   { path: 'address', component: AddressComponent, canActivate: [AlwaysAuthGuard] },
   { path: 'order', component: OrderComponent },
   { path: 'caterer/:catererName', component: CatererHomeComponent },
+  { path: 'customer-support', component: CustomerSupportComponet },
   { path: '**', component: ProductComponent }]
 
 
@@ -81,7 +83,8 @@ const routes: Routes = [
     AccountComponent,
     NavigatorComponent,
     ProfilePicComponent,
-    UserAddressComponent
+    UserAddressComponent,
+    CustomerSupportComponet
   ],
   imports: [
     BrowserModule,

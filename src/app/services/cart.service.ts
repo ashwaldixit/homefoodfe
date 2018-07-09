@@ -42,6 +42,7 @@ export class CartService {
 	}
 
     addToCart(product: Product) {
+        console.log("product:::::"+JSON.stringify(product));
         return this.httpService.callApiObservable(`/cart/product`, "POST", product, null)
     }
 
